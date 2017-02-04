@@ -1,0 +1,20 @@
+<form action="{{ action}}" method="post">
+    {{#with caro}}
+        <div class="flex flex-flow-no-wr center margin-twenty">
+            <label class="center">Picture Path </label>
+            <input class="field" type="text" name="picturePath" value="{{ picturePath }}"/>
+            <label class="center">Picture Path 1</label>
+            <input class="field" type="text" name="picturePath1" value="{{ picturePath1 }}"/>
+            <label class="center">Picture Path 2</label>
+            <input class="field" type="text" name="picturePath2" value="{{ picturePath2 }}"/>
+            <div class="center margin-twenty">
+                <button type="submit" class="btn">submit</button>
+                <button type="reset" class="btn">reset</button>
+            </div>
+        </div>
+    {{/with}}
+</form>
+
+<div class="flex center margin-twenty">
+    <button onclick="dashBtn()" class="btn">Return to dashboard</button>
+</div>

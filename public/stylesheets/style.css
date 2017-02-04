@@ -1,0 +1,527 @@
+* {
+    -webkit-transition-property: all;
+    -webkit-transition-duration: .2s;
+    -moz-transition-timing-function: cubic-bezier(100, 50, 21, 6);
+    -moz-transition-property: all;
+    -moz-transition-timing-function: cubic-bezier(100, 50, 21, 6);
+    margin: 0;
+    padding: 0;
+}
+
+::before, ::after, label {
+    box-sizing: border-box;
+}
+
+a:link {
+    text-decoration: none;
+    color: #f8ca66;
+}
+
+a.alt-link {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+a.alt-link:hover {
+    text-decoration: none;
+    color: #f8ca66;
+}
+
+a:active {
+    text-decoration: none;
+    color: #f4eed7;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #f4eed7;
+}
+
+body > div.background-div > div.nav-container > button:nth-child(1):hover {
+    background-color: white;
+    color: black;
+    overflow-x: hidden;
+    line-height: 1.5;
+}
+
+/*body, html {*/
+/*height: 100%;*/
+/*}*/
+
+body {
+    background: #382237;
+    /*background: -moz-linear-gradient(top, rgba(25, 17, 23, 1) 0%, rgb(56, 34, 55) 28%, rgba(132, 72, 127, 1) 100%);*/
+    /*background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(25, 17, 23, 1)), color-stop(28%, rgba(56, 34, 55, 1)), color-stop(100%, rgba(132, 72, 127, 1)));*/
+    /*background: -webkit-linear-gradient(top, rgba(25, 17, 23, 1) 0%, rgba(56, 34, 55, 1) 28%, rgba(132, 72, 127, 1) 100%);*/
+    /*background: -o-linear-gradient(top, rgba(25, 17, 23, 1) 0%, rgba(56, 34, 55, 1) 28%, rgba(132, 72, 127, 1) 100%);*/
+    /*background: -ms-linear-gradient(top, rgba(25, 17, 23, 1) 0%, rgba(56, 34, 55, 1) 28%, rgba(132, 72, 127, 1) 100%);*/
+    /*background: linear-gradient(to bottom, rgba(25, 17, 23, 1) 0%, rgba(56, 34, 55, 1) 28%, rgba(132, 72, 127, 1) 100%);*/
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#191117', endColorstr='#84487f', GradientType=0);
+    font-family: 'Fira Sans', sans-serif;
+    color: #fff;
+    height: 100%;
+    min-width: 320px;
+    max-width: 1920px;
+    text-transform: capitalize;
+
+}
+
+.background-div.flex.flex-flow-no-wr.center > img {
+    align-self: center;
+}
+
+.background-div.flex.flex-flow-no-wr.center > div {
+    align-self: center;
+}
+
+button {
+    border: 1px solid black;
+    margin: 2px;
+
+}
+
+.background-div {
+    height: 242px;
+    background-size: cover;
+}
+
+.main-logo {
+    height: 100px;
+    justify-content: center;
+    align-self: center;
+
+}
+
+.main-logo:hover {
+    cursor: pointer;
+}
+
+.btn:hover {
+    border: none;
+    background: rgba(0, 0, 0, 0.4);
+    background: #fff;
+    padding: 20px 20px;
+    color: #1b1b1b;
+}
+
+.center {
+    align-content: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.dot {
+    cursor: pointer;
+    height: 13px;
+    width: 13px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-flex;
+    transition: background-color 0.6s ease;
+    visibility: hidden;
+}
+
+#dots {
+    position: relative;
+    bottom: 24px;
+
+}
+
+.dotActive, .dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+.slides {
+    display: none;
+}
+
+.slideActive {
+    display: block;
+}
+
+.layout-subsection {
+
+    color: #fff;
+
+}
+
+.flex-flow-row-wr {
+    flex-flow: row wrap;
+
+}
+
+hr {
+    margin: 5%;
+}
+
+.layout-section-header > h1 {
+    justify-content: center;
+}
+
+.block {
+    width: 120px;
+    height: auto;
+
+
+}
+
+.btn {
+    background-color: #84487f;
+    color: #ffffff;
+    padding: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+
+}
+
+.btn:hover {
+    border: none;
+    background: rgba(0, 0, 0, 0.4);
+    background: #fff;
+    padding: 20px 20px;
+    color: #1b1b1b;
+}
+
+.btn-sm {
+    background-color: #84487f;
+    color: #ffffff;
+    padding: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+
+}
+
+.btn-sm:hover{
+    background-color: white;
+    color: black;
+}
+.flex { /* on the parent elements */
+    display: flex;
+
+}
+
+.flex-flow-no-wr {
+    flex-flow: column nowrap;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.google-ads {
+    height: 90px;
+    width: 650px;
+    background-color: #ffffff;
+    color: #000000;
+
+}
+
+ul {
+    list-style-type: none;
+}
+
+.twin {
+    width: 900px;
+    align-self: center;
+}
+
+.bold {
+    font-weight: 800;
+}
+
+.footer-header {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+li {
+    margin: 5px;
+}
+
+label {
+
+}
+
+textarea {
+    height: 250px;
+    width: 250px;
+
+}
+
+#{PLAYER_DIV_ID} {
+    display: flex;
+    width: 100%;
+
+}
+
+.lowercase {
+    text-transform: capitalize;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.event-list {
+    margin: 20px;
+}
+
+span.event-block {
+
+}
+
+.event-block {
+    position: relative;
+}
+
+img.store-pic {
+    width: 650px;
+    height: 250px;
+}
+
+.about-wordwrap {
+    word-wrap: break-word;
+
+}
+
+#about, #comments h1 {
+    color: #e8e0c5;
+}
+
+#about, #comments ul li {
+    color: #ffffff;
+}
+
+article.about h1 {
+    color: #e8e0c5;
+}
+
+section#about {
+    align-items: flex-start;
+}
+
+article.uppercase.about {
+    justify-content: flex-start;
+
+}
+
+.services {
+    padding-top: 35px;
+}
+
+article.services h1 {
+    text-decoration: underline;
+}
+
+figure.about-header-bg img {
+
+}
+
+.event-block {
+    align-self: center;
+}
+
+/* styling for dynamic event pages */
+.event-body {
+
+}
+
+.event-body h1 {
+    text-align: center;
+}
+
+.event-body > h4 {
+    align-self: center;
+    padding: 20px 50px;
+}
+
+.event-body span {
+    margin: 0 auto;
+}
+
+fieldset.fs-location {
+    border: none;
+    width: 320px;
+    margin-top: 10px;
+}
+
+input#name, input#email {
+    height: 55px;
+    width: 370px;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 1.2em;
+}
+
+textarea#message {
+    width: 370px;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 1.2em;
+}
+
+textarea#message:focus{
+    background-color: #84487f;
+    color: #ffffff;
+}
+textarea{
+    height: 320px;
+    width: 480px;
+}
+.comment-style {
+    /*background-color: #0f3369;*/
+    border: 1px solid white;
+    width: 300px;
+    margin: 10px;
+    padding: 20px 0;
+
+}
+
+.comment-style:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+div.comment-style h3 {
+    color: #f8ca66;
+
+}
+
+.margin-twenty {
+    margin-top: 20px;
+}
+
+input.btn {
+
+}
+
+input:focus {
+    background-color: #84487f;
+    color: #ffffff;
+    border: none;
+}
+
+input#message {
+    margin-top: 20px;
+    background-color: #84487f;
+    color: #ffffff;
+    border: none;
+}
+
+input#message:focus{
+
+}
+
+.field {
+    margin: 20px;
+}
+
+.tooltip:hover:after {
+    content: 'coming soon!';
+    position: fixed;
+    top: 450px;
+    left: 86%;
+    color: #fff;
+}
+
+.event-card {
+    width: 300px;
+    align-self: flex-start;
+}
+
+.parallax {
+    /* The image used */
+    background-image: url("/images/home-page_parallax1.jpg");
+
+    /* Full height */
+    height: auto;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+}
+
+.parallax2 {
+    /* The image used */
+    background-image: url("/images/home-page_parallax2.jpg");
+
+    /* Full height */
+    height: auto;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+}
+
+.left-text {
+    text-align: left;
+}
+
+#video-playback > div.player-overlay.player-fullscreen-overlay.js-control-fullscreen-overlay {
+    width: 480px;
+    height: 480px;
+}
+
+.bot-margin-twenty{
+    margin-bottom: 20px;
+}
+article ul.center-text li a.fa:link {
+    color: #ffffff;
+
+}
+
+article ul.center-text li a.fa:hover {
+    color: #000000;
+    background-color: #ffffff;
+
+}
+
+#about > section > article > p{
+    margin: 0 0 0 15%;
+}
+@media screen and (max-width: 1920px) {
+    .tooltip:hover:after {
+        left: 74%;
+    }
+
+}
+
+@media screen and (max-width: 1440px) {
+    .tooltip:hover:after {
+        left: 55%;
+    }
+}
+

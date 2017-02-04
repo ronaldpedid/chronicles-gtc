@@ -1,0 +1,17 @@
+#robots.txt
+
+User-agent: *
+Disallow: /dashboard/
+Disallow: /login/
+Disallow: /register/
+Disallow: /events/
+Disallow: /events/edit/
+Disallow: /events/create/
+Disallow: /comments/
+Disallow: /comments/edit/
+Disallow: /comment/
+Disallow: /caro/
+Disallow: /blog/
+Disallow: /games/
+Disallow: /games/create/
+Disallow: /games/edit/

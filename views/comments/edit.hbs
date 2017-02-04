@@ -1,0 +1,18 @@
+<form action="{{action}}" method="post">
+    {{#with comment}}
+        <label for="name">Edit Name</label>
+        <input id="name" type="text" name="name" placeholder="NAME" value="{{name}}"/>
+        <label for="email">Edit E-Mail Address</label>
+        <input id="email" type="text" name="email" placeholder="EMAIL" value="{{email}}"/>
+        <label for="message">Edit Message</label>
+        <textarea id="message" class="text-area" name="area1" cols="40"
+                  placeholder="Please leave us a comment or suggestion" value="{{message}}"></textarea>
+        <button class="btn" type="submit">Create</button>
+        <button class="btn" type="reset">Reset</button>
+    {{/with}}
+</form>
+
+
+<form action="{{ deleteAction }}" method="post">
+    <button class="btn" type="submit">Delete Comment</button>
+</form>

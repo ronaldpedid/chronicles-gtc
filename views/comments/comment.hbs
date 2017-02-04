@@ -1,0 +1,20 @@
+<div class="flex center flex-flow-no-wr margin-twenty">
+    {{#with comment}}
+        <div class="flex center margin-twenty">
+            <h4>{{ name }}</h4>
+        </div>
+        <div class="flex center margin-twenty">
+            <span>{{ email }}</span>
+        </div>
+        <div class="flex center margin-twenty">
+            <span>{{ message }}</span>
+        </div>
+    {{/with}}
+
+    <form action="{{ deleteAction }}" method="post">
+        <div class="flex center margin-twenty">
+            <button type="submit" class="btn">Delete Comment</button>
+        </div>
+    </form>
+
+</div>

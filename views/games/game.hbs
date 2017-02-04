@@ -1,0 +1,11 @@
+<section class="flex flex-flow-no-wr">
+    {{#with game}}
+        <div class="flex flex-flow-no-wr center">
+            <figure><img src="{{ picturePath }}"/></figure>
+            <h1>{{ title }}</h1>
+        </div>
+    {{/with}}
+    <div class="flex center">
+        <button onclick="dashBtn()" class="btn">Return to dashboard</button>
+    </div>
+</section>

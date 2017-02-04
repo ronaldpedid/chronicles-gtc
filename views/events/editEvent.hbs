@@ -1,0 +1,53 @@
+<main class="flex center center-text">
+    <section class="flex-flow-no-wr">
+        <form action="{{action}}" method="post">
+            {{#with event}}
+                <div class="flex center margin-twenty">
+                    <label for="name">Event Name</label>
+                    </div>
+            <div class="margin-twenty">
+                    <input id="name" type="text" name="name" placeholder="event name..." value="{{name}}"/>
+                </div>
+                <div class="margin-twenty">
+                    <label>Event Location</label>
+                </div>
+                <div class="flex margin-twenty">
+                    <fieldset class="center flex-flow-no-wr fs-location ">
+                        <input id="location_lewisville" type="radio" name="location"
+                               value="lewisville" {{{ setChecked 'lewisville' location }}} />
+                        <label for="location_lewisville">Lewisville</label>
+                        <input id="location_the_colony" type="radio" name="location"
+                               value="the_colony" {{{ setChecked 'the_colony' location }}} />
+                        <label for="location_the_colony">The Colony</label>
+                    </fieldset>
+                </div>
+                <div class="center flex flex-flow-no-wr margin-twenty">
+                    <label class="center margin-twenty" for="startTime">Event Time</label>
+                    <input type="text" class="flatpickr margin-twenty" name="startTime" id="startTime" value="{{startTime}}"/>
+                    <label class="center margin-twenty" for="description">Event Description</label>
+                <textarea class="margin-twenty" id="description" name="description"
+                          placeholder="event description...">{{description}}</textarea>
+                    <label class="center margin-twenty" for="type">Event Type</label>
+                    <select class="margin-twenty" name="game" id="type">
+                        {{#each ../games as |game|}}
+                            {{#with game}}
+                                <option value="{{id}}">{{ title }}</option>
+
+                            {{/with}}
+                        {{/each}}
+                    </select>
+                </div>
+            {{/with}}
+
+            <button type="submit" class="btn margin-twenty">Create</button>
+            <button type="reset" class="btn">Reset</button>
+
+        </form>
+        <form action="{{ deleteAction }}" method="post">
+            <button type="submit" class="btn">Delete this event</button>
+
+        </form>
+        <button onclick="dashBtn()" class="btn">Return to dashboard</button>
+    </section>
+</main>
+

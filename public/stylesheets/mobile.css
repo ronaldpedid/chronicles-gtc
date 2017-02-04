@@ -1,0 +1,281 @@
+@media screen and (min-width: 768px) and (max-width: 1920px) {
+    .hero-section {
+        justify-content: center;
+        margin: 20px auto;
+        width: 50%;
+    }
+
+    input#name, input#email {
+        font-family: 'Fira Sans', sans-serif;
+        font-size: 1.2em;
+        justify-content: flex-start;
+
+    }
+
+    textarea#message {
+        font-family: 'Fira Sans', sans-serif;
+        font-size: 1.2em;
+        margin: 15px;
+    }
+
+    .nav-container {
+        justify-content: center;
+        height: auto;
+        align-content: center;
+
+    }
+
+    .inner-twin {
+        flex-flow: column;
+    }
+
+    p {
+        padding: 5px;
+    }
+
+    .block {
+        margin: 10px;
+    }
+
+    .store-info {
+        line-height: 1;
+        align-self: center;
+    }
+
+    .twin {
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+
+    footer {
+        flex-flow: row wrap;
+    }
+
+    form {
+        flex-flow: column nowrap;
+        width: 100%;
+    }
+
+    textarea {
+
+    }
+
+    input {
+
+        align-self: center;
+    }
+
+    img.store-pic {
+        margin: 20px auto;
+    }
+
+    .about h1 {
+        font-size: 150%;
+        text-align: center;
+        margin: 10px;
+    }
+
+    .about .about-text {
+        font-size: 85%;
+        line-height: 1.2;
+        margin: 0 25%;
+        text-align: center;
+    }
+
+    .event-margin-desktop {
+        margin: 0 10%;
+    }
+
+    .desktop-hide {
+        display: none;
+    }
+
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 899px)  {
+    #about {
+        /*margin: 10px 0 0 20px;*/
+        align-self: center;
+        align-items: center;
+
+    }
+
+    input#name{
+        height: auto;
+        width: auto;
+
+    }
+
+    input#email{
+        height: auto;
+        width: auto;
+    }
+
+    textarea#message{
+        align-self: flex-start;
+        height: auto;
+        width: auto;
+    }
+    article.about.uppercase{}
+}
+@media screen and (min-width: 767px) {
+    .store-info {
+        margin: 46px;
+    }
+
+    #comment-form {
+        flex-direction: column;
+
+    }
+
+    article.about h1 {
+        text-align: center;
+    }
+
+    article.about p {
+        margin: 0 15px;
+        word-wrap: normal;
+    }
+
+    .fa-facebook {
+        font-size: 125%;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 766px) {
+    body {
+
+    }
+
+    .shadow-container > img {
+        width: 100%;
+    }
+
+    .layout {
+        flex: 1 0;
+    }
+
+    .google-ads {
+        width: 100%;
+    }
+
+    .nav-container {
+        flex-flow: column nowrap;
+        align-content: center;
+
+    }
+
+    .layout-subsection {
+
+    }
+
+    div.background-div.flex.flex-flow-no-wr.center > img {
+        width: 75%;
+    }
+
+    .btn {
+
+    }
+
+    .background-div {
+        height: 100%;
+    }
+
+    .block {
+        margin: 5px;
+        color: #000;
+        width: 100%;
+    }
+
+    .logo-container {
+        align-items: center;
+    }
+
+    .store-info {
+        text-align: center;
+        font-size: 80%;
+        margin: 10px;
+
+    }
+
+    .format {
+        margin: 10px;
+    }
+
+    .twin {
+        width: 100%;
+        flex-flow: column nowrap;
+
+    }
+
+    .hero-section {
+        margin-top: 20px;
+    }
+
+    .footer-header {
+        flex-flow: column nowrap;
+        align-content: center;
+        justify-content: center;
+    }
+
+    form {
+        flex-flow: column nowrap;
+        width: 75%;
+    }
+
+    textarea {
+        height: 250px;
+        width: 250px;
+
+    }
+
+    img.store-pic {
+        width: 100%;
+        height: 100%;
+    }
+
+    .about {
+        margin: 10px 20px 0 0;
+        align-self: center;
+
+    }
+
+    .about h1 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+
+    .mobile-hide {
+        display: none;
+    }
+
+    .mobile-show {
+        display: block;
+    }
+
+    .mobile-center {
+        align-content: center;
+        justify-content: flex-start;
+        margin: 0 12px;
+    }
+
+    .mobile-text {
+
+    }
+
+    #video-playback > div.player-overlay.player-fullscreen-overlay.js-control-fullscreen-overlay {
+        height: 320px;
+        width: 320px;
+    }
+
+    textarea#message {
+        width: 100%;
+    }
+
+    input#name, input#email {
+        width: 100%;
+    }
+
+}

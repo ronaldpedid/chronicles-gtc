@@ -1,0 +1,52 @@
+<main class="layout">
+    <section class="flex center flex-flow-no-wr center-text">
+        <figure class="about-header-bg center">
+            <img class="store-pic" src="/images/fpo-StorePic.jpg">
+        </figure>
+        <article class="uppercase about">
+            <h1>Proudly serving DFW since 2014</h1>
+            <p class="about-text">Our goal is to meet all your comic and gaming needs with affordable prices.
+                if you need anything,
+                just <a href="mailto:chroncilesgtc@gmail.com">ask</a>. We'll do our best to
+                accommodate your needs</p>
+        </article>
+        <article class="uppercase services">
+            <h1>Additional services we offer:</h1>
+            <ul>
+                <li>New Release Comic Book Subscriptions</li>
+                <li>Convention Booths</li>
+                <li>Collectible Card
+                    and Comic Book Collection Appraisal
+                </li>
+                <li></li>
+                <li></li>
+            </ul>
+        </article>
+    </section>
+    <section class="flex flex-flow-row-wr center">
+        <div class="layout">
+            <form action="{{action}}" method="post">
+                {{#with comment}}
+                    <div class="flex center">
+                        <label for="name"></label>
+                        <input id="name" type="text" name="name" placeholder="NAME" value="{{name}}"/>
+                    </div>
+                    <div class="flex center">
+                        <label for="email"></label>
+                        <input id="email" type="text" name="email" placeholder="EMAIL" value="{{email}}"/>
+                    </div>
+                    <div class="flex center">
+                        <label for="message"></label>
+                        <textarea id="message" class="text-area" name="area1" cols="40" placeholder="MESSAGE"
+                                  value="{{message}}"></textarea>
+                    </div>
+                    <div class="flex center">
+                        <button class="btn" type="submit">Send</button>
+                        <!--<button class="btn" type="reset"></button>-->
+                    </div>
+                {{/with}}
+            </form>
+        </div>
+    </section>
+
+</main>

@@ -1,0 +1,18 @@
+<section class="flex flex-flow-row-wr center center-text uppercase">
+
+    {{#each comments as |comment|}}
+        <div class="comment-style">
+            {{#with comment}}
+                <a href="{{id}}">
+                    <h3>{{ name }}</h3>
+                    <h5>{{ email }}</h5>
+                    <p>{{ message }}</p>
+                </a>
+            {{/with}}
+        </div>
+    {{/each}}
+
+</section>
+<div class="flex center">
+    <button onclick="dashBtn()" class="btn dash-btn">Return to dashboard</button>
+</div>

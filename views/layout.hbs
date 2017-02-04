@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,minimum-scale=1, user-scalable = no"/>
+    <title>{{title}}</title>
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <link rel='stylesheet' href='/stylesheets/mobile.css'/>
+    <link rel="stylesheet" href="https://unpkg.com/flatpickr/dist/flatpickr.min.css">
+    <script src="https://unpkg.com/flatpickr"></script>
+
+</head>
+<body class="cgtc-store">
+{{#if messages.success}}
+    <div>{{ messages.success }}</div>
+{{/if}}
+
+{{#if deleteaction.success}}
+    <div>{{ deleteaction.success }}</div>
+{{/if}}
+<section class="layout-wrapper flex-flow-no-wr center">
+    <div class="background-div flex flex flex-flow-row-wr center" style="background-image: url('{{backgroundPath}}')">
+        <img onclick="logoLink()" class="main-logo" src="/images/chronicles-logo.png">
+        <div class="store-info flex-flow-row-wr">
+            <p>locations</p>
+            <p>1110 W. Main St., Lewisville, TX | 972-420-0161</p>
+            <p>5201 S.Colony Blvd., The Colony, TX | 972-294-5800</p>
+
+        </div>
+    </div>
+    <div class="nav-container flex flex-flow-row-wr center">
+        <button onclick="eventBtn()" class="btn">Events</button>
+        <button onclick="aboutBtn()" class="btn">About</button>
+        <button onclick="streamBtn()" class="btn">Stream</button>
+    </div>
+</section>
+{{{body}}}
+<footer class="margin-twenty">
+    <ul class="footer-header flex flex-flow-row-wr-wr center center-text">
+        <li><a href="#top">Back to Top</a></li>
+        <li><a href="privacy.hbs">privacy policy</a></li>
+        <li><a href="terms.hbs">terms of service</a></li>
+        <li><a href="/login/">Employee Login</a></li>
+        <li>copyright &copy;2017</li>
+
+    </ul>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>var $ = jQuery.noConflict();</script>
+
+    <!-- Shoprocket JavaScript -->
+    <script language="javascript" src="https://space.shoprocket.co/frontend/sr.min.js?cid=11542"></script>
+
+
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+<script src="/javascripts/carousel.js"></script>
+<script>
+    var slideManager = new SlideManager();
+    slideManager.start();
+
+    function logoLink() {
+        document.location = "/";
+    }
+    function eventBtn() {
+        document.location = "#events"
+    }
+
+    function aboutBtn() {
+        document.location = "#about"
+    }
+
+    function createEventBtn() {
+        document.location = "/events/create/"
+    }
+
+    function createGameBtn() {
+        document.location = "/games/create/"
+
+    }
+    function dashBtn() {
+        document.location = "/dashboard/"
+
+    }
+    function viewEventBtn() {
+        document.location = "/events/"
+
+    }
+    function viewGamesBtn() {
+        document.location = "/games/"
+
+    }
+    function viewCommentsBtn() {
+        document.location = "/comments/"
+
+    }
+    function editCaroBtn() {
+        document.location = "/caro/"
+    }
+    function streamBtn() {
+        document.location = "#stream"
+    }
+
+</script>
+<!--<script>-->
+    <!--$(document).ready(function() {-->
+        <!--$("editEventBtn").click(function () {-->
+            <!--document.location = "/events/" + {{id}} + "/edit"-->
+        <!--});-->
+    <!--});-->
+<!--</script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>var $ = jQuery.noConflict();</script>
+<script>
+    flatpickr(".flatpickr", {
+        enableTime: true
+    });
+</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-91320119-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+</body>
+</html>

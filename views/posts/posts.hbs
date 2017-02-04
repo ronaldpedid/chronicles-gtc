@@ -1,0 +1,10 @@
+<section class="flex flex-flow-no-wr center center-text uppercase">
+    {{#each posts as |post|}}
+        {{#with post}}
+            <h4>{{ title }}</h4>
+            <h5>{{ author }}</h5>
+            <p>{{ content }}</p>
+        {{/with}}
+    {{/each}}
+    <!--<button onclick="dashBtn()" class="btn">Return to dashboard</button>-->
+</section>

@@ -1,0 +1,25 @@
+<form action="{{ action }}" method="post">
+    {{#with game}}
+        <div class="flex flex-flow-no-wr center">
+            <label class="center center-text">Title</label>
+            <input id="gameTitle" type="text" name="title" value="{{ title }}"/>
+            <label class="center">Picture Path</label>
+            <input type="text" name="picturePath" value="{{ picturePath }}"/>
+            <div class="center margin-twenty">
+                <button type="submit" class="btn">submit</button>
+                <button type="reset" class="btn">reset</button>
+            </div>
+        </div>
+    {{/with}}
+</form>
+
+<form action="{{ deleteAction }}" method="post">
+    <div class="flex center margin-twenty">
+        <button type="submit" class="btn">Delete this game</button>
+    </div>
+</form>
+
+<div class="flex center margin-twenty">
+    <button onclick="dashBtn()" class="btn">Return to Dashboard</button>
+</div>
+</div>

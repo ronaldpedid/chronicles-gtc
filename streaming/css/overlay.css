@@ -1,0 +1,228 @@
+
+a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    border-bottom: 2px solid gold;
+}
+
+#container-fb {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    animation: Reminder 10s 1s 1;
+    background: transparent;
+    text-align: center;
+
+}
+
+#container-tw {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    animation: Reminder 10s 15s 1;
+    background: transparent;
+
+}
+
+#container-other {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    animation: Reminder 10s 30s 1;
+    background: transparent;
+
+}
+
+#container-website {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    animation: Reminder 10s 45s 1;
+    background: transparent;
+}
+
+#container-circle {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    animation: Reminder-circle 10s 1s 1;
+    background: transparent;
+    border-radius: 50%;
+    border: 3px solid silver;
+}
+
+#container-scoreboard {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    animation: Reminder 10s 1s 1;
+    background: transparent;
+}
+
+
+@-webkit-keyframes Reminder {
+    0%, 100% {
+        width: 0;
+        height: 24px;
+    }
+
+    20%, 80% {
+        width: 350px;
+        height: 24px;
+    }
+    30%, 70% {
+        width: 400px;
+        height: 120px;
+    }
+
+}
+
+@-webkit-keyframes Reminder-circle {
+    0% {
+        width: 0;
+        height: 0;
+    }
+
+    100% {
+        width: 150px;
+        height: 150px;
+    }
+
+}
+@-webkit-keyframes Reminder-circle-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.header {
+    width: 400px;
+    height: 26px;
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    text-align: center;
+    background-color: #e8e0c5;
+    border-bottom: 1px solid black;
+    font-weight: 700;
+    font-family: 'Dosis', sans-serif;
+    box-shadow: 0 0 40px #0f3369;
+}
+
+.header-circle {
+    width: 400px;
+    height: 26px;
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    text-align: center;
+    background-color: #e8e0c5;
+    border-bottom: 1px solid black;
+    font-weight: 700;
+    font-family: 'Dosis', sans-serif;
+    box-shadow: 0 0 40px #0f3369;
+    border-radius: 50%;
+}
+
+.bodyContent {
+    width: 400px;
+    height: 94px;
+    background: #382237;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    font-size: 20px;
+    font-family: 'Dosis', sans-serif;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 100%;
+
+}
+
+.bodyContentScoreboard {
+    width: 400px;
+    height: 94px;
+    background: #382237;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    font-size: 20px;
+    font-family: 'Dosis', sans-serif;
+    text-align: center;
+
+}
+
+
+.bodyContent-circle {
+    width: 400px;
+    height: 400px;
+    background: #382237;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    font-size: 20px;
+    font-family: 'Dosis', sans-serif;
+    text-align: center;
+
+}
+
+.spacer {
+    margin-top: 10px;
+}
+
+span.facebook {
+    position: relative;
+    top: 25px;
+    right: 25px;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.blue-team {
+    color: blue;
+    text-shadow: .1em .1em skyblue;
+}
+
+.red-team {
+    color: red;
+}
+
+.chronicles-LGC {
+    position: absolute;
+    top: 17px;
+    left: 50px;
+    font-size: 450%;
+    color: #ffffff;
+    z-index: 9999;
+    text-align: center;
+    animation: Reminder-circle-rotate 10s 8s 1;
+    font-family: Marlett;
+}

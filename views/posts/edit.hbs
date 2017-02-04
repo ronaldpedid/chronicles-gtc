@@ -1,0 +1,36 @@
+<div class="flex flex-flow-no-wr center">
+    <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script>
+    <script type="text/javascript">
+        //<![CDATA[
+        bkLib.onDomLoaded(function () {
+            nicEditors.allTextAreas()
+        });
+        //]]>
+    </script>
+<form class="flex center" action="{{action}}" method="post">
+{{#with post}}
+        <div class="flex-flow-no-wr center">
+            <label for="title">Edit Title</label>
+            <input id="title" type="text" name="title" placeholder="TITLE" value="{{title}}"/>
+        </div>
+    <div class="center">
+        <label for="author">Edit Author</label>
+        <input id="author" type="text" name="author" placeholder="AUTHOR" value="{{author}}"/>
+    </div>
+    <div class="center flex-flow-no-wr center-text">
+        <label for="content">Edit Message</label>
+            <textarea class="center" name="area1" cols="40" placeholder="WRITE BLOG HERE"
+                      value="{{content}}" style="background-color: #FFFFFF"></textarea>
+        <div class="flex center">
+            <button class="btn" type="submit">Create</button>
+            <button class="btn" type="reset">Reset</button>
+        </div>
+    </div>
+{{/with}}
+</form>
+<div class="center">
+    <form action="{{ deleteAction }}" method="post">
+        <button class="btn" type="submit">Delete Comment</button>
+    </form>
+</div>
+</div>

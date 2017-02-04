@@ -1,0 +1,11 @@
+<div class="flex flex-flow-no-wr center center-text margin-twenty">
+    {{#each games as |game|}}
+        {{#with game}}
+            <span><a href="/games/{{ id }}/edit">{{title}}</a></span>
+
+        {{/with}}
+    {{/each}}
+</div>
+<div class="flex center margin-twenty">
+    <button onclick="dashBtn()" class="btn">Return to dashboard</button>
+</div>
