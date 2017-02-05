@@ -141,10 +141,10 @@ function initializeApp(db) {
     app.use('/', index);
     app.use('/login', login);
     app.use('/privacy', privacy);
-    authRouter.use('/register', register);
+    app.use('/register', register);
     authRouter.use('/users', users);
     authRouter.use('/events', events);
-    authRouter.use('/events/create', events)
+    authRouter.use('/events/create', events);
     authRouter.use('/about', about);
     authRouter.use('/dashboard', dashboard);
     authRouter.use('/games/', games);
