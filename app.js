@@ -33,7 +33,7 @@ var comments = require('./routes/comments');
 var secret = "Nibbieamylodgiduke1";
 var dashboard = require('./routes/dashboard');
 var privacy = require('./routes/privacy');
-var config = require('config');
+var config = require('./config');
 
 passport.use(new LocalStrategy({
         usernameField: 'username',
