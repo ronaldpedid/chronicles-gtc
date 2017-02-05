@@ -3,8 +3,6 @@
  */
 var express = require('express');
 var router = express.Router();
-var User = require('../lib/models/User');
-var passport = require('passport');
 
 /* GET home page. */
 //router.get('/', function(req, res, next) {
@@ -12,16 +10,14 @@ var passport = require('passport');
 //});
 router.get('/', function (req, res, next) {
     if (req.user) {
+        req.logout();
+        res.locals.user = null;
+        req.flash('success', 'You have successfully logged out!');
         res.redirect('/');
     } else {
-        res.render('login');
+        req.flash('error', 'You must be logged in to do that.')
+        res.render('back');
     }
 });
 
-router.post('/', passport.authenticate('local',
-    {
-        successRedirect: '/',
-        failureRedirect: '/login',
-        failureFlash: true
-    }));
 module.exports = router;

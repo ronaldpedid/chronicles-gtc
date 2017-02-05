@@ -525,3 +525,15 @@ article ul.center-text li a.fa:hover {
     }
 }
 
+.userinfo {
+    margin-left: auto;
+}
+
+.userinfo.username, .userinfo.userlink {
+    padding: 0 0.25rem;
+    font-style: italic;
+}
+
+.userinfo-margin-fix {
+    margin-right: auto;
+}

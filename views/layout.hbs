@@ -28,6 +28,13 @@
 
         </div>
     </div>
+    {{#if user}}
+        <div class="userinfo">
+            <span class="username">Welcome, {{user.username}}</span>
+            <a class="userlink" href="/dashboard">Dashboard</a>
+            <a class="userlink" href="/logout">Logout</a>
+        </div>
+    {{/if}}
     <div class="nav-container flex flex-flow-row-wr center">
         <button onclick="eventBtn()" class="btn">Events</button>
         <button onclick="aboutBtn()" class="btn">About</button>

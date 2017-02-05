@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var mongoMiddleware = require('./middleware/mongo');
 var backgroundSelectMiddleware = require('./middleware/background-select');
+var setUserOnLocalsMiddleware = require('./middleware/user-local');
 // var newEventsMiddleware = require('./middleware/events-middleware');
 var session = require('express-session');
 var flash = require('express-flash');
@@ -16,7 +17,7 @@ var expressHandlebars = require('express-handlebars');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var User = require('./lib/models/User');
-
+var MongoStore = require('connect-mongo')(session);
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -24,14 +25,19 @@ var events = require('./routes/events');
 var games = require('./routes/games');
 var register = require('./routes/register');
 var login = require('./routes/login');
+var logout = require('./routes/logout');
 var about = require('./routes/about');
 var posts = require('./routes/posts');
 var caro = require('./routes/caro');
 var comments = require('./routes/comments');
 var secret = "Nibbieamylodgiduke1";
 var dashboard = require('./routes/dashboard');
-passport.use(new LocalStrategy(
+passport.use(new LocalStrategy({
+        usernameField: 'username',
+        passwordField: 'password'
+    },
     function (username, password, done) {
+        console.log('inside local strategy');
         User.findOne({username: username}, function (err, user) {
             if (err) {
                 console.log(err);
@@ -41,10 +47,13 @@ passport.use(new LocalStrategy(
                 return done(null, false, {message: 'Incorrect username or password'});
             }
             user.comparePassword(password, function (err, isMatch) {
-                if (err || !isMatch) {
-                    return done(null, false, {message: 'Incorrect username or password'});
-                } else {
+                console.log(user);
+                if (err) {
+                    return done(err);
+                } else if (isMatch) {
                     return done(null, user);
+                } else {
+                    return done(null, false, {message: 'Incorrect username or password'});
                 }
             });
         });
@@ -57,11 +66,11 @@ passport.serializeUser(function (user, done) {
 passport.deserializeUser(function (id, done) {
     console.log('deserialize', id);
     User.findById(id, function (err, user) {
-        console.log(err, user);
         if (err) {
+            console.log('error in deserialize', err);
             return done(err);
         }
-        return done(null, user)
+        done(null, user)
     });
 });
 var app = express();
@@ -98,43 +107,45 @@ app.set('view engine', 'hbs');
 
 app.use(methodOverride("_method"));
 app.use(logger('dev'));
-app.use(passport.initialize());
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 app.use(mongoMiddleware());
 app.use(backgroundSelectMiddleware());
-app.use(session({secret: secret, resave: false, saveUninitalized: true}));
-app.use(flash());
+app.use(session({
+    store: new MongoStore({url: 'mongodb://localhost:27017/cgtc'}),
+    secret: secret,
+    maxAge: 60 * 60 * 1000, // ms; lasts for one hour
+    resave: false,
+    saveUninitialized: false
+}));
+app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
+app.use(setUserOnLocalsMiddleware());
 var authRouter = express.Router();
 authRouter.use(function (req, res, next) {
-        console.log("we are here first.");
-        next();
-    },
-    passport.authenticate('local', {
-            failureRedirect: '/login',
-            failureFlash: true
-        }
-    ), function (req, res, next) {
-        console.log("we are here.");
-        next();
-    });
+    if (req.isAuthenticated()) {
+        return next()
+    }
+    res.redirect('/login');
+});
 
 
 app.use('/', index);
 app.use('/login', login);
+app.use('/register', register);
 authRouter.use('/users', users);
 authRouter.use('/events', events);
 authRouter.use('/about', about);
-authRouter.use('/register', register);
 authRouter.use('/dashboard', dashboard);
 authRouter.use('/games/', games);
 authRouter.use('/comments/', comments);
 authRouter.use('/posts/', posts);
 authRouter.use('/caro/', caro);
-app.use('/', authRouter);
+authRouter.use('/logout', logout);
+app.use(authRouter);
 
 
 // catch 404 and forward to error handler

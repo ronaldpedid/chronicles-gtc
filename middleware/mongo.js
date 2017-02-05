@@ -9,11 +9,13 @@ function mongoMiddleware(options) {
     options = options || {}
     var connectionString = options.connectionString || "cgtc";
     var db = mongojs(connectionString);
-    return function mongoMiddleware(req, res, next) {
+    const middleware = function mongoMiddleware(req, res, next) {
         req.db = db;
         req.cgtc = db.collection("cgtc");
         next();
     };
+    middleware.db = db;
+    return middleware;
 }
 
 module.exports = mongoMiddleware;
