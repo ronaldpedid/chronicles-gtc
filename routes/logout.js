@@ -15,7 +15,7 @@ router.get('/', function (req, res, next) {
         req.flash('success', 'You have successfully logged out!');
         res.redirect('/');
     } else {
-        req.flash('error', 'You must be logged in to do that.')
+        req.flash('error', 'You must be logged in to do that.');
         res.render('back');
     }
 });

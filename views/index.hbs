@@ -1,6 +1,6 @@
 <main class="layout" xmlns="http://www.w3.org/1999/html">
     <section>
-        <div class="hero-section center">
+        <div class="hero-section flex center margin-twenty">
             <div class="slideshow-container">
                 {{#with caro}}
                     <div class="slides fade slideActive">
@@ -49,7 +49,7 @@
             <img src="{{ game.picturePath}}"/>
             <span class="margin-twenty">{{ formatDate startTime }}</span>
                <span> {{ name }} at {{ location }}</span>
-                 <span class="margin-twenty lowercase bot-margin-twenty">{{ description }}</span>
+                 <span class="margin-twenty lowercase left-text bot-margin-twenty">{{ description }}</span>
         </span>
 
                     {{/with}}

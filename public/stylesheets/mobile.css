@@ -1,3 +1,7 @@
+@media screen and (min-width: 1921px){
+
+}
+
 @media screen and (min-width: 768px) and (max-width: 1920px) {
     .hero-section {
         justify-content: center;
@@ -54,10 +58,6 @@
     form {
         flex-flow: column nowrap;
         width: 100%;
-    }
-
-    textarea {
-
     }
 
     input {

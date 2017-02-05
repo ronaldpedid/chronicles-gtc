@@ -32,6 +32,7 @@ var caro = require('./routes/caro');
 var comments = require('./routes/comments');
 var secret = "Nibbieamylodgiduke1";
 var dashboard = require('./routes/dashboard');
+var privacy = require('./routes/privacy');
 passport.use(new LocalStrategy({
         usernameField: 'username',
         passwordField: 'password'
@@ -135,9 +136,11 @@ authRouter.use(function (req, res, next) {
 
 app.use('/', index);
 app.use('/login', login);
-app.use('/register', register);
+app.use('/privacy', privacy);
+authRouter.use('/register', register);
 authRouter.use('/users', users);
 authRouter.use('/events', events);
+authRouter.use('/events/create', events)
 authRouter.use('/about', about);
 authRouter.use('/dashboard', dashboard);
 authRouter.use('/games/', games);
