@@ -33,6 +33,8 @@ var comments = require('./routes/comments');
 var secret = "Nibbieamylodgiduke1";
 var dashboard = require('./routes/dashboard');
 var privacy = require('./routes/privacy');
+var config = require('config');
+
 passport.use(new LocalStrategy({
         usernameField: 'username',
         passwordField: 'password'
@@ -84,7 +86,7 @@ var handleBars = expressHandlebars.create({
     extname: '.hbs',
     helpers: {
         formatDate: function (dateString) {
-            return moment(dateString).format("dddd, MMMM D h A");
+            return moment(dateString).format("dddd, MMMM D / h A");
         },
         setChecked: function (value, currentValue) {
             if (value == currentValue) {
@@ -112,10 +114,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser());
-app.use(mongoMiddleware());
+app.use(mongoMiddleware(config.mongo));
 app.use(backgroundSelectMiddleware());
 app.use(session({
-    store: new MongoStore({url: 'mongodb://localhost:27017/cgtc'}),
+    store: new MongoStore({url: config.mongo.connectionString}),
     secret: secret,
     maxAge: 60 * 60 * 1000, // ms; lasts for one hour
     resave: false,
