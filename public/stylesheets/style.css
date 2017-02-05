@@ -34,7 +34,7 @@ a:active {
 
 a:visited {
     text-decoration: none;
-    color: #f4eed7;
+    color: #f8ca66;
 }
 
 body > div.background-div > div.nav-container > button:nth-child(1):hover {
@@ -295,6 +295,10 @@ textarea {
     margin: 20px;
 }
 
+.event-date-style{
+    font-size: 110%;
+    font-weight: 800;
+}
 span.event-block {
 
 }
@@ -313,7 +317,7 @@ img.store-pic {
 
 }
 
-#about, #comments h1 {
+#about, #comments, #eventHeader, #newComics  h1 {
     color: #e8e0c5;
 }
 

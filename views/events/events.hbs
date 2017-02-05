@@ -1,15 +1,20 @@
-<section class="flex flex-flow-row-wr center center-text margin-twenty">
-    {{#each events as |event|}}
-        {{#with event}}
-            <span class="event-block flex flex-flow-no-wr center margin-twenty">
+<section class="parallax flex margin-twenty">
+    <div class="flex center">
+        <div class="flex flex-flow-row-wr uppercase center center-text event-margin-desktop">
+            {{#each events as |event|}}
+                {{#with event}}
+                    <span class="event-block  flex flex-flow-no-wr center margin-twenty event-card">
             <img src="{{ game.picturePath}}"/>
-            <span class="margin-twenty">{{ formatDate startTime }}</span>
-               <span><a href="{{id}}">{{ name }} at {{ location }}</a></span>
-                 <span class="lowercase">{{ description }}</span>
+            <span class="margin-twenty event-date-style">{{formatDate startTime }}</span>
+               <span class="margin-twenty"><a href="{{id}}"> {{ name }} at {{ location }}</a></span>
+                 <span class="margin-twenty lowercase left-text bot-margin-twenty">{{ description }}</span>
         </span>
 
-        {{/with}}
-    {{/each}}
+                {{/with}}
+            {{/each}}
+
+        </div>
+    </div>
 </section>
 <div class="flex center margin-twenty">
     <button onclick="dashBtn()" class="btn dash-btn">Return to dashboard</button>

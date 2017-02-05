@@ -6,17 +6,11 @@ var mongojs = require('mongojs');
 
 
 function mongoMiddleware(options) {
-    options = options || {}
-    var connectionString = options.connectionString || "cgtc";
-    console.log('trying to connect to mongo ' + connectionString);
-    var db = mongojs(connectionString);
-    const middleware = function mongoMiddleware(req, res, next) {
-        req.db = db;
-        req.cgtc = db.collection("cgtc");
+    return function mongoMiddleware(req, res, next) {
+        req.db = req.app.db;
+        req.cgtc = req.app.db.collection("cgtc");
         next();
     };
-    middleware.db = db;
-    return middleware;
 }
 
 module.exports = mongoMiddleware;

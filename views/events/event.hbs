@@ -5,13 +5,13 @@
         </figure>
         <h1>{{ name }}</h1>
         <span>Location: {{ location }}</span>
-        <span>When: {{ formatDate startTime }}</span>
+        <span>When: {{ formatDate  }} @ <span>{{ startTime }}</span></span>
         <h4> {{ description }}</h4>
 
 
     </div>
 {{/with}}
 <div class="flex center">
-    <button onclick="editEventBtn()" class="btn dash-btn margin-twenty">Edit this event</button>
+    <button onclick="editEventBtn('{{event.id}}')" class="btn dash-btn margin-twenty">Edit this event</button>
     <button onclick="dashBtn()" class="btn dash-btn margin-twenty">Return to dashboard</button>
 </div>

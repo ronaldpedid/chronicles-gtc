@@ -6,8 +6,6 @@ var Game = require('../lib/models/Game');
 var mongoose = require('mongoose');
 var Comment = require('../lib/models/Comment');
 var Caro = require('../lib/models/Carousel');
-mongoose.connect('mongodb://localhost/users');
-
 
 /* GET home page. */
 //router.get('/', function(req, res, next) {
