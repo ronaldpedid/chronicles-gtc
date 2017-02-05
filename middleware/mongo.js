@@ -8,6 +8,7 @@ var mongojs = require('mongojs');
 function mongoMiddleware(options) {
     options = options || {}
     var connectionString = options.connectionString || "cgtc";
+    console.log('trying to connect to mongo ' + connectionString);
     var db = mongojs(connectionString);
     const middleware = function mongoMiddleware(req, res, next) {
         req.db = db;

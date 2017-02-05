@@ -35,6 +35,9 @@ var dashboard = require('./routes/dashboard');
 var privacy = require('./routes/privacy');
 var config = require('./config');
 
+var mongoose = require('mongoose');
+mongoose.connect(config.mongo.connectionString);
+
 passport.use(new LocalStrategy({
         usernameField: 'username',
         passwordField: 'password'
