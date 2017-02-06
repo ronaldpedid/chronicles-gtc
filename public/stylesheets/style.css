@@ -471,7 +471,6 @@ input#message:focus{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    z-index: 0;
 }
 
 .parallax2 {
@@ -498,6 +497,9 @@ input#message:focus{
     height: 480px;
 }
 
+.color-standout{
+    color: #f8ca66;
+}
 .bot-margin-twenty{
     margin-bottom: 20px;
 }
