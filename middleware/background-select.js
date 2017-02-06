@@ -17,9 +17,9 @@ function backgroundSelectMiddleware(){
             } else {
                 req.cgtc.insert({
                     logoImages: [
-                        'images/carousel-1.jpg',
-                        'images/carousel-2.jpg',
-                        'images/carousel-3.jpg'
+                        'images/headerbg.png',
+                        'images/headerbg1.png',
+                        'images/headerbg2.png'
                     ]
                 }, function (err) {
                     if (err) {
