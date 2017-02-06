@@ -29,33 +29,34 @@
 
     </section>
     <!--<section id="newComics" class="flex center flex-flow-row-wr">-->
-        <!--<h1 class="flex uppercase">fresh comics</h1>-->
+    <!--<h1 class="flex uppercase">fresh comics</h1>-->
     <!--</section>-->
     <!--<section class="flex center ">-->
-        <!--<div class="flex center flex-flow-row-wr">-->
-            <!--<div class="block flex center"><img src="/images/comic-top-FPO-archie.jpg"/></div>-->
-            <!--<div class="block flex center"><img src="/images/comic-top-FPO-archie.jpg"/></div>-->
-            <!--<div class="block flex center"><img src="/images/comic-top-FPO-archie.jpg"/></div>-->
-            <!--<div class="block flex center"><img src="/images/comic-top-FPO-archie.jpg"/></div>-->
-            <!--<div class="block flex center"><img src="/images/comic-top-FPO-archie.jpg"/></div>-->
-        <!--</div>-->
+    <!--<div class="flex center flex-flow-row-wr">-->
+    <!--<div class="block flex center"><img src="/images/comic-top-FPO-archie.jpg"/></div>-->
+    <!--<div class="block flex center"><img src="/images/comic-top-FPO-archie.jpg"/></div>-->
+    <!--<div class="block flex center"><img src="/images/comic-top-FPO-archie.jpg"/></div>-->
+    <!--<div class="block flex center"><img src="/images/comic-top-FPO-archie.jpg"/></div>-->
+    <!--<div class="block flex center"><img src="/images/comic-top-FPO-archie.jpg"/></div>-->
+    <!--</div>-->
     <!--</section>-->
     <section class="parallax flex flex-flow-no-wr margin-twenty" id="events">
         <div class="flex flex-flow-no-wr center">
             <div class="bot-margin-twenty">
                 <h1 id="eventHeader" class="flex center uppercase margin-twenty">events</h1>
                 <h4 id="eventBody" class="flex center uppercase margin-twenty">Join our community on&nbsp;
-                    <a href="https://www.facebook.com/chroniclesgtc/" target="_blank">facebook</a>&nbsp;to find gaming groups and get
+                    <a href="https://www.facebook.com/chroniclesgtc/" target="_blank">facebook</a>&nbsp;to find gaming
+                    groups and get
                     discounts</h4>
+
             </div>
             <div class="flex flex-flow-row-wr uppercase center center-text event-margin-desktop">
-
                 {{#each events as |event|}}
                     {{#with event}}
-                        <span class="event-block  flex flex-flow-no-wr center margin-twenty event-card">
+                        <span class="event-block flex flex-flow-no-wr center margin-twenty event-card">
             <img src="{{ game.picturePath}}"/>
             <span class="margin-twenty">{{ formatDate startTime }}</span>
-               <span> {{ name }} at {{ location }}</span>
+               <span class="color-standout"> {{ name }} at {{ location }}</span>
                  <span class="margin-twenty lowercase left-text bot-margin-twenty">{{ description }}</span>
         </span>
 
@@ -111,8 +112,9 @@
                                   value="{{message}}"></textarea>
                     </div>
                     <div class="flex center margin-twenty">
+
                         <button class="btn" type="submit">Send</button>
-                        <!--<button class="btn" type="reset"></button>-->
+                        <div class="g-recaptcha" data-sitekey="6LeLhRQUAAAAAGrF6jG7X__jINxV-QK54MlseQKQ"></div>
                     </div>
                 {{/with}}
             </form>
