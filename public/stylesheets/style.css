@@ -567,3 +567,7 @@ article ul.center-text li a.fa:hover {
 .pp-margins{
     margin: 20px 30px;
 }
+
+#eventBody > a{
+    margin: 0 .3em;
+}
