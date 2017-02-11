@@ -14,7 +14,6 @@ var moment = require('moment');
 //res.render('index', { title: 'Chronicles: GTC', condition:true, anyArray: [1,2,3] });
 //});
 router.get('/', function (req, res) {
-    var today = moment().startOf('day');
     Event.find().sort([['startTime', 1]]).populate('game').exec(function (err, events) {
         if (err) {
             throw err;
