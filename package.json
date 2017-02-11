@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
-    "start-prod": "MONGO_CS=mongodb://45.55.135.114:27017 pm2 start ./bin/www"
+    "start-prod": "pm2 start ecosystem.config.js"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
