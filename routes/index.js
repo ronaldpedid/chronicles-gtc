@@ -15,7 +15,7 @@ var moment = require('moment');
 //});
 router.get('/', function (req, res) {
     var today = moment().startOf('day');
-    Event.find({startTime: {$gte: today.toDate()}}).sort([['startTime', 1]]).populate('game').exec(function (err, events) {
+    Event.find().sort([['startTime', 1]]).populate('game').exec(function (err, events) {
         if (err) {
             throw err;
         }
