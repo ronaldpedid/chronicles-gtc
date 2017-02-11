@@ -6,38 +6,42 @@ var Game = require('../lib/models/Game');
 var mongoose = require('mongoose');
 var Comment = require('../lib/models/Comment');
 var Caro = require('../lib/models/Carousel');
+var lodash = require('lodash');
 
 /* GET home page. */
 //router.get('/', function(req, res, next) {
 //res.render('index', { title: 'Chronicles: GTC', condition:true, anyArray: [1,2,3] });
 //});
 router.get('/', function (req, res) {
-    Event.find().populate('game').sort([['startTime', 1]]).exec(function (err, events) {
+    Event.find({startTime: {$gte: new Date()}}).populate('game').sort([['startTime', 1]]).exec(function (err, events) {
         if (err) {
             throw err;
         }
+        var groupedEvents = lodash.chain(events).groupBy("location").map(function (eventGroup, location) {
+            return {location: location, events: eventGroup};
+        }).value();
+
         var comment = new Comment();
         Comment.find(function (err, comments) {
             if (err) {
                 throw err;
             }
-            Caro.findOne(function (err, caro){
+            Caro.findOne(function (err, caro) {
                 if (err) {
                     throw err;
                 }
-                console.log(events);
                 res.render('index', {
                     action: '/events?_method=POST',
                     commentAction: '/comments?_method=POST',
                     comment: comment,
-                    events: events,
+                    groupedEvents: groupedEvents,
                     caro: caro
+
                 });
             });
         });
     });
 });
-
 
 
 module.exports = router;

@@ -1,5 +1,5 @@
 <main class="layout" xmlns="http://www.w3.org/1999/html">
-    <section>
+    <section class="caro">
         <div class="hero-section flex center margin-twenty">
             <div class="slideshow-container">
                 {{#with caro}}
@@ -28,41 +28,33 @@
         </div>
 
     </section>
-    <!--<section id="newComics" class="flex center flex-flow-row-wr">-->
-    <!--<h1 class="flex uppercase">fresh comics</h1>-->
-    <!--</section>-->
-    <!--<section class="flex center ">-->
-    <!--<div class="flex center flex-flow-row-wr">-->
-    <!--<div class="block flex center"><img src="/images/comic-top-FPO-archie.jpg"/></div>-->
-    <!--<div class="block flex center"><img src="/images/comic-top-FPO-archie.jpg"/></div>-->
-    <!--<div class="block flex center"><img src="/images/comic-top-FPO-archie.jpg"/></div>-->
-    <!--<div class="block flex center"><img src="/images/comic-top-FPO-archie.jpg"/></div>-->
-    <!--<div class="block flex center"><img src="/images/comic-top-FPO-archie.jpg"/></div>-->
-    <!--</div>-->
-    <!--</section>-->
-    <section class="parallax flex flex-flow-no-wr margin-twenty" id="events">
-        <div class="flex flex-flow-no-wr center">
+    <section class="parallax flex flex-flow-no-wr center  margin-twenty" id="events">
+        <div>
             <div class="bot-margin-twenty">
                 <h1 id="eventHeader" class="flex center uppercase margin-twenty">events</h1>
                 <h4 id="eventBody" class="center-text uppercase margin-twenty">Join our community on
                     <a href="https://www.facebook.com/chroniclesgtc/" target="_blank">facebook</a>to find gaming
                     groups and get
                     discounts</h4>
-
             </div>
-            <div class="flex flex-flow-row-wr uppercase center center-text event-margin-desktop">
-                {{#each events as |event|}}
-                    {{#with event}}
-                        <span class="event-block flex flex-flow-no-wr center margin-twenty event-card">
-            <img src="{{ game.picturePath}}"/>
-            <span class="margin-twenty">{{ formatDate startTime }}</span>
-               <span class="color-standout"> {{ name }} at {{ location }}</span>
-                 <span class="margin-twenty lowercase left-text bot-margin-twenty">{{ description }}</span>
-        </span>
-
-                    {{/with}}
+            <div class="flex flex-flow-row-wr uppercase center center-text margin-twenty-flanks">
+                {{#each groupedEvents as |group|}}
+                    <div class="flex center flex-flow-no-wr margin-twenty">
+                        <h2 class="flex center margin-twenty">{{ group.location }}</h2>
+                        <div class="flex flex-flow-row-wr margin-twenty-left">
+                            {{#each group.events as |event|}}
+                                {{#with event}}
+                                    <div class="event-block flex flex-flow-no-wr center margin-twenty event-card">
+                                        <img class="margin-twenty-flanks" src="{{ game.picturePath}}"/>
+                                        <span class="margin-twenty">{{ formatDate startTime }}</span>
+                                        <span class="color-standout"> {{ name }} at {{location}}</span>
+                                        <span class="lowercase left-text margin-twenty-surround">{{ description }}</span>
+                                    </div>
+                                {{/with}}
+                            {{/each}}
+                        </div>
+                    </div>
                 {{/each}}
-
             </div>
         </div>
     </section>
@@ -84,10 +76,10 @@
                     </li>
                 </ul>
                 <h1 class="margin-twenty">Visit us on social media</h1>
-                <ul class="center-text flex flex-flow-row-wr center">
-                    <li><a class="fa fa-facebook btn-sm" href="http://www.facebook.com/chroniclesgtc/"
-                           target="_blank"></a></li>
-                    <li><a class="fa fa-twitter btn-sm" href="http://www.twitter.com/chroniclesDG" target="_blank"></a>
+                <ul class="center-text flex flex-flow-row-wr center margin-twenty">
+                    <li><a class="btn-sm" href="http://www.facebook.com/chroniclesgtc/"
+                           target="_blank"><img src="/images/facebook.png" /></a></li>
+                    <li><a class="btn-sm" href="http://www.twitter.com/chroniclesDG" target="_blank"><img src="/images/twitter.png" /></a>
                     </li>
                 </ul>
             </article>
@@ -148,4 +140,5 @@
         </h3>
         <div class="margin-twenty"></div>
     </section>
+
 </main>

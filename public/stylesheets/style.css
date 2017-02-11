@@ -211,17 +211,11 @@ hr {
 }
 
 .btn-sm {
-    background-color: #84487f;
-    color: #ffffff;
-    padding: 20px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
     cursor: pointer;
-
 }
 
 .btn-sm:hover{
-    background-color: white;
+    box-shadow: 5px 6px black;
     color: black;
 }
 .flex { /* on the parent elements */
@@ -455,8 +449,9 @@ input#message:focus{
 }
 
 .event-card {
-    width: 300px;
     align-self: flex-start;
+    width: 400px;
+
 }
 
 .parallax {
@@ -570,4 +565,39 @@ article ul.center-text li a.fa:hover {
 
 #eventBody > a{
     margin-right:.3em;
+}
+
+
+/* Shoprocket styles */
+
+.cgtc-store div.sr-product-details {
+    background-color: #382237;
+    color: #f8ca66;
+}
+
+
+div.flex.center div.sr-add{
+    border: none;
+}
+
+div.flex.center div.sr-add{
+align-self: baseline;
+
+}
+
+.align-store-items{
+    align-items: flex-start;
+    align-content: flex-end;
+}
+
+.caro {
+    z-index: 999;
+}
+
+.margin-twenty-flanks {
+    margin:0 20px;
+}
+
+.margin-twenty-surround{
+    margin: 20px;
 }

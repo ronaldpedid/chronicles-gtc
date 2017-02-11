@@ -146,10 +146,10 @@ span img {
 }
 
 @media screen and (min-width: 320px) and (max-width: 766px) {
-    body {
-
+    .align-store-items{
+        align-items: center;
+        align-content: flex-end;
     }
-
     .shadow-container > img {
         width: 100%;
     }

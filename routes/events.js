@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 var Event = require('../lib/models/Event');
 var Game = require('../lib/models/Game');
-
 var mongoose = require('mongoose');
 
 
