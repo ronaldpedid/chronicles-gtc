@@ -14,14 +14,14 @@ var moment = require('moment');
 //res.render('index', { title: 'Chronicles: GTC', condition:true, anyArray: [1,2,3] });
 //});
 router.get('/', function (req, res) {
-    Event.find().sort([['startTime', 1]]).populate('game').exec(function (err, events) {
+    var today = moment().startOf('day');
+    Event.find({startTime: {$gte: today.toDate()}}).populate('game').sort([['startTime', 1]]).exec(function (err, events) {
         if (err) {
             throw err;
         }
         var groupedEvents = lodash.chain(events).groupBy("location").map(function (eventGroup, location) {
             return {location: location, events: eventGroup};
         }).value();
-        console.log(groupedEvents);
 
         var comment = new Comment();
         Comment.find(function (err, comments) {
