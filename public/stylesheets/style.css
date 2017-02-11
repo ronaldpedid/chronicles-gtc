@@ -494,6 +494,7 @@ input#message:focus{
 
 .color-standout{
     color: #f8ca66;
+    font-size: 115%;
 }
 .bot-margin-twenty{
     margin-bottom: 20px;
@@ -600,4 +601,8 @@ align-self: baseline;
 
 .margin-twenty-surround{
     margin: 20px;
+}
+
+.display-none{
+    display: none;
 }
