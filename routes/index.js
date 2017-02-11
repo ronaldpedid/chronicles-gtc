@@ -21,6 +21,7 @@ router.get('/', function (req, res) {
         var groupedEvents = lodash.chain(events).groupBy("location").map(function (eventGroup, location) {
             return {location: location, events: eventGroup};
         }).value();
+        console.log(groupedEvents);
 
         var comment = new Comment();
         Comment.find(function (err, comments) {
