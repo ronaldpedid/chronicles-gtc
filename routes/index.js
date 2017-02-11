@@ -7,13 +7,15 @@ var mongoose = require('mongoose');
 var Comment = require('../lib/models/Comment');
 var Caro = require('../lib/models/Carousel');
 var lodash = require('lodash');
+var moment = require('moment');
 
 /* GET home page. */
 //router.get('/', function(req, res, next) {
 //res.render('index', { title: 'Chronicles: GTC', condition:true, anyArray: [1,2,3] });
 //});
 router.get('/', function (req, res) {
-    Event.find({startTime: {$gte: new Date()}}).populate('game').sort([['startTime', 1]]).exec(function (err, events) {
+    var today = moment().startOf('day');
+    Event.find({startTime: {$gte: today.toDate()}}).populate('game').sort([['startTime', 1]]).exec(function (err, events) {
         if (err) {
             throw err;
         }
