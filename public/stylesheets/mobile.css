@@ -263,10 +263,6 @@ span img {
         margin: 0 12px;
     }
 
-    .mobile-text {
-
-    }
-
     #video-playback > div.player-overlay.player-fullscreen-overlay.js-control-fullscreen-overlay {
         height: 320px;
         width: 320px;

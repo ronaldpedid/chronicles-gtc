@@ -32,12 +32,12 @@
         <div class="flex center flex-flow-no-wr">
             <div class="bot-margin-twenty">
                 <h1 id="eventHeader" class="flex center uppercase margin-twenty">events</h1>
-                <h4 id="eventBody" class="center-text uppercase margin-twenty">Join our community on
+                <h4 id="eventBody" class="flex flex-flow-row-wr center center-text about-wordwrap uppercase margin-twenty">Join our community on
                     <a href="https://www.facebook.com/chroniclesgtc/" target="_blank">facebook</a>to find gaming
                     groups and get
                     discounts</h4>
             </div>
-            <div class="flex flex-flow-row-wr uppercase center center-text event-margin-desktop">
+            <div class="flex flex-flow-row-wr uppercase center-text event-margin-desktop">
                 {{#each groupedEvents as |group|}}
                     <div class="flex center flex-flow-no-wr margin-twenty">
                         <h2 class="flex center margin-twenty color-standout">{{group.location}}<span class="display-none">{{ location }}</span></h2>
@@ -48,7 +48,7 @@
                                         <img class="margin-twenty-events" src="{{ game.picturePath}}"/>
                                         <span class="margin-twenty">{{ formatDate startTime }}</span>
                                         <span class="color-standout"> {{ name }}</span>
-                                        <span class="lowercase left-text">{{ description }}</span>
+                                        <span class="lowercase left-text about-wordwrap sm-margin-left">{{ description }}</span>
                                     </div>
                                 {{/with}}
                             {{/each}}

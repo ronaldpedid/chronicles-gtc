@@ -618,3 +618,8 @@ align-self: baseline;
 .empty{
 
 }
+
+.sm-margin-fix{
+    margin-right: 4%;
+    margin-bottom: 5%;
+}
