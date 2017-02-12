@@ -610,3 +610,11 @@ align-self: baseline;
 .display-none{
     display: none;
 }
+
+.group-h2-size{
+    font-size: 150%;
+}
+
+.empty{
+
+}
