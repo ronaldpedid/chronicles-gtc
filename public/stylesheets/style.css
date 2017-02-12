@@ -44,10 +44,6 @@ body > div.background-div > div.nav-container > button:nth-child(1):hover {
     line-height: 1.5;
 }
 
-/*body, html {*/
-/*height: 100%;*/
-/*}*/
-
 body {
     background: #382237;
     /*background: -moz-linear-gradient(top, rgba(25, 17, 23, 1) 0%, rgb(56, 34, 55) 28%, rgba(132, 72, 127, 1) 100%);*/
