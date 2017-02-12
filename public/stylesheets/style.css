@@ -303,7 +303,7 @@ img.store-pic {
 }
 
 .about-wordwrap {
-    word-wrap: break-word;
+    word-wrap: normal;
 
 }
 
