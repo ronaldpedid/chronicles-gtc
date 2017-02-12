@@ -28,7 +28,7 @@
         </div>
 
     </section>
-    <section class="parallax flex flex-flow-no-wr center  margin-twenty" id="events">
+    <section class="parallax flex flex-flow-no-wr center  margin-twenty margin-twenty-surround" id="events">
         <div>
             <div class="bot-margin-twenty">
                 <h1 id="eventHeader" class="flex center uppercase margin-twenty">events</h1>
@@ -44,7 +44,7 @@
                         <div class="flex flex-flow-row-wr margin-twenty-left">
                             {{#each group.events as |event|}}
                                 {{#with event}}
-                                    <div class="event-block flex flex-flow-no-wr center margin-twenty event-card">
+                                    <div class="event-block flex flex-flow-no-wr center margin-twenty margin-twenty-flanks event-card">
                                         <img class="margin-twenty" src="{{ game.picturePath}}"/>
                                         <span class="margin-twenty">{{ formatDate startTime }}</span>
                                         <span class="color-standout"> {{ name }}</span>
