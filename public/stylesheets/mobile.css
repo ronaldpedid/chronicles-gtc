@@ -1,7 +1,7 @@
-@media screen and (min-width: 1921px){
-span img {
-    margin-right: 10px;
-}
+@media screen and (min-width: 1921px) {
+    span img {
+        margin-right: 10px;
+    }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1920px) {
@@ -94,8 +94,7 @@ span img {
 
 }
 
-
-@media screen and (min-width: 768px) and (max-width: 899px)  {
+@media screen and (min-width: 768px) and (max-width: 899px) {
     #about {
         /*margin: 10px 0 0 20px;*/
         align-self: center;
@@ -103,24 +102,27 @@ span img {
 
     }
 
-    input#name{
+    input#name {
         height: auto;
         width: auto;
 
     }
 
-    input#email{
+    input#email {
         height: auto;
         width: auto;
     }
 
-    textarea#message{
+    textarea#message {
         align-self: flex-start;
         height: auto;
         width: auto;
     }
-    article.about.uppercase{}
+
+    article.about.uppercase {
+    }
 }
+
 @media screen and (min-width: 767px) {
     .store-info {
         margin: 46px;
@@ -146,10 +148,11 @@ span img {
 }
 
 @media screen and (min-width: 320px) and (max-width: 766px) {
-    .align-store-items{
+    .align-store-items {
         align-items: center;
         align-content: flex-end;
     }
+
     .shadow-container > img {
         width: 100%;
     }
@@ -248,7 +251,6 @@ span img {
         margin-bottom: 10px;
     }
 
-
     .mobile-hide {
         display: none;
     }
@@ -276,4 +278,24 @@ span img {
         width: 100%;
     }
 
+    .evt-copy-mobileFix {
+        font-size: 90%;
+        margin: 0;
+    }
+    .center-mobile {
+        align-content: center;
+        justify-content: center;
+    }
+
+    /* recaptcha styling*/
+.g-recaptcha{
+    width: 100px;
+    border-radius: 4px;
+    border-right: 1px solid #d8d8d8;
+    overflow: hidden;
+}
+
+.sm_spacer{
+    margin-left: 2px;
+}
 }
