@@ -604,6 +604,9 @@ align-self: baseline;
     margin: 20px;
 }
 
+.margin-twenty-events{
+    margin: 0 5% 20px 5%;
+}
 .display-none{
     display: none;
 }
