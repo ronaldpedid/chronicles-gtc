@@ -497,7 +497,7 @@ input#message:focus{
 }
 
 .spacer-fix{
-    margin: 0 0 0 10px;
+    margin: 0 10%;
 }
 
 article ul.center-text li a.fa:link {
