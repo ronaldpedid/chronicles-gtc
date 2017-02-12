@@ -40,11 +40,11 @@
             <div class="flex flex-flow-row-wr uppercase center-text">
                 {{#each groupedEvents as |group|}}
                     <div class="flex center flex-flow-no-wr margin-twenty">
-                        <h2 class="flex center margin-twenty color-standout">{{ group.location}}<span class="display-none">{{ location }}</span></h2>
+                        <h2 class="flex center margin-twenty color-standout">{{group.location}}<span class="display-none">{{ location }}</span></h2>
                         <div class="flex flex-flow-row-wr margin-twenty-left">
                             {{#each group.events as |event|}}
                                 {{#with event}}
-                                    <div class="event-block flex flex-flow-no-wr center margin-twenty margin-twenty-flanks event-card">
+                                    <div class="event-block flex flex-flow-no-wr center margin-twenty event-card">
                                         <img class="margin-twenty" src="{{ game.picturePath}}"/>
                                         <span class="margin-twenty">{{ formatDate startTime }}</span>
                                         <span class="color-standout"> {{ name }}</span>
