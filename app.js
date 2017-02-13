@@ -79,55 +79,6 @@ function initializeApp(db) {
             done(null, user)
         });
     });
-
-    
-    // var PUBLIC_KEY  = '6LeLhRQUAAAAAGrF6jG7X__jINxV-QK54MlseQKQ',
-    //     PRIVATE_KEY = '6LeLhRQUAAAAAO8l4kzwNxYBOvT2aD4Qo-eMootu';
-    //
-    // var app1 = express.createServer();
-    //
-    //
-    // app1.configure(function() {
-    //     app.use(express.bodyParser());
-    // });
-    //
-    // app1.get('/', function(req, res) {
-    //     var recaptcha = new Recaptcha(PUBLIC_KEY, PRIVATE_KEY);
-    //
-    //     res.render('form.jade', {
-    //         layout: false,
-    //         locals: {
-    //             recaptcha_form: recaptcha.toHTML()
-    //         }
-    //     });
-    // });
-    //
-    // app1.post('/', function(req, res) {
-    //     var data = {
-    //         remoteip:  req.connection.remoteAddress,
-    //         challenge: req.body.recaptcha_challenge_field,
-    //         response:  req.body.recaptcha_response_field
-    //     };
-    //     var recaptcha = new Recaptcha(PUBLIC_KEY, PRIVATE_KEY, data);
-    //
-    //     recaptcha.verify(function(success, error_code) {
-    //         if (success) {
-    //             res.send('Recaptcha response valid.');
-    //         }
-    //         else {
-    //             // Redisplay the form.
-    //             res.render('form.jade', {
-    //                 layout: false,
-    //                 locals: {
-    //                     recaptcha_form: recaptcha.toHTML()
-    //                 }
-    //             });
-    //         }
-    //     });
-    // });
-    //
-    // app1.listen(3000);
-
 // view engine setup
         var handleBars = expressHandlebars.create({
             layoutsDir: path.join(__dirname, 'views'),
@@ -189,7 +140,7 @@ function initializeApp(db) {
         app.use('/', index);
         app.use('/login', login);
         app.use('/privacy', privacy);
-        app.use('/register', register);
+        authRouter.use('/register', register);
         authRouter.use('/users', users);
         authRouter.use('/events', events);
         authRouter.use('/events/create', events);
