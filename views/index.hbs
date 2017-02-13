@@ -121,18 +121,15 @@
     </section>
     <section id="stream" class="flex flex-flow-no-wr center-text margin-twenty parallax2">
         <h1 class="margin-twenty">Enjoy our stream!</h1>
-        <script src= "http://player.twitch.tv/js/embed/v1.js"></script>
-        <div class="margin-twenty flex center mobile-hide" id="twitchPlayer"></div>
-        <script type="text/javascript">
-            var options = {
-                width: 767,
-                height: 360,
-                channel: "{CHRONICLESGAMES}"
-
-            };
-            var player = new Twitch.Player("twitchPlayer", options);
-            player.setVolume(0.5, autoplay = false);
-        </script>
+        <iframe class="flex center margin-twenty"
+                id="twitchPlayer"
+                src="http://player.twitch.tv/?channel=chroniclesgames&muted=true"
+                height="720"
+                width="1280"
+                frameborder="0"
+                scrolling="no"
+                allowfullscreen="true">
+        </iframe>
         <h3 class="uppercase margin-twenty">steaming schedule:</h3>
         <ul>
             <li>Street Fighter V | Thursdays @ 8pm CST</li>

@@ -267,9 +267,9 @@ textarea {
 
 }
 
-#{PLAYER_DIV_ID} {
+#twitchPlayer {
     display: flex;
-    width: 100%;
+    width: 90%;
 
 }
 

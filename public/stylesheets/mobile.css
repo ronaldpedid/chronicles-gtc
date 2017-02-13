@@ -265,9 +265,9 @@
         margin: 0 12px;
     }
 
-    #video-playback > div.player-overlay.player-fullscreen-overlay.js-control-fullscreen-overlay {
+   #twitchPlayer {
         height: 320px;
-        width: 320px;
+        width: 100%;
     }
 
     textarea#message {
