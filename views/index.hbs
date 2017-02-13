@@ -122,15 +122,15 @@
     <section id="stream" class="flex flex-flow-no-wr center-text margin-twenty parallax2">
         <h1 class="margin-twenty">Enjoy our stream!</h1>
         <script src= "http://player.twitch.tv/js/embed/v1.js"></script>
-        <div class="margin-twenty flex center mobile-hide" id="{PLAYER_DIV_ID}"></div>
+        <div class="margin-twenty flex center mobile-hide" id="twitchPlayer"></div>
         <script type="text/javascript">
             var options = {
                 width: 767,
                 height: 360,
                 channel: "{CHRONICLESGAMES}"
-                //video: "{VIDEO_ID}"
+
             };
-            var player = new Twitch.Player("{PLAYER_DIV_ID}", options);
+            var player = new Twitch.Player("twitchPlayer", options);
             player.setVolume(0.5, autoplay = false);
         </script>
         <h3 class="uppercase margin-twenty">steaming schedule:</h3>
