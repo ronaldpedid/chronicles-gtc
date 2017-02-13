@@ -79,7 +79,7 @@ function initializeApp(db) {
             done(null, user)
         });
     });
-// view engine setup
+
         var handleBars = expressHandlebars.create({
             layoutsDir: path.join(__dirname, 'views'),
             partialsDir: path.join(__dirname, 'views', 'partials'),
