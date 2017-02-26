@@ -17,8 +17,8 @@ function initializeApp(db) {
     var passport = require('passport');
     var LocalStrategy = require('passport-local').Strategy;
     var User = require('./lib/models/User');
+    var Signup = require('./lib/models/Signup');
     var MongoStore = require('connect-mongo')(session);
-
     var index = require('./routes/index');
     var users = require('./routes/users');
     var events = require('./routes/events');
@@ -34,6 +34,8 @@ function initializeApp(db) {
     var dashboard = require('./routes/dashboard');
     var privacy = require('./routes/privacy');
     var config = require('./config');
+    var signup = require('./routes/signup');
+    var camp = require('./routes/camp');
 
     var app = express();
     app.db = db;
@@ -140,6 +142,9 @@ function initializeApp(db) {
         app.use('/', index);
         app.use('/login', login);
         app.use('/privacy', privacy);
+        app.use('/posts/', posts);
+        app.use('/camp/', camp);
+        // app.use('/signup/', signup);
         authRouter.use('/register', register);
         authRouter.use('/users', users);
         authRouter.use('/events', events);
@@ -148,9 +153,9 @@ function initializeApp(db) {
         authRouter.use('/dashboard', dashboard);
         authRouter.use('/games/', games);
         authRouter.use('/comments/', comments);
-        authRouter.use('/posts/', posts);
         authRouter.use('/caro/', caro);
         authRouter.use('/logout', logout);
+        authRouter.use('/posts/create/', posts);
         app.use(authRouter);
 
 

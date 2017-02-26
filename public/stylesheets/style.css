@@ -449,7 +449,7 @@ input#message:focus{
     width: 300px;
 
 }
-
+/* parallax Group */
 .parallax {
     /* The image used */
     background-image: url("/images/home-page_parallax1.jpg");
@@ -479,8 +479,97 @@ input#message:focus{
     z-index: 0;
 }
 
+.parallaxPokemon {
+    /* The image used */
+    background-image: url("/images/camp-page-parallax-pokemon.jpg");
+
+    /* Full height */
+    height: auto;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallaxMagic {
+    /* The image used */
+    background-image: url("/images/camp-page-parallax-mtg.jpg");
+
+    /* Full height */
+    height: auto;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallaxDnD {
+    /* The image used */
+    background-image: url("/images/camp-page-parallax-dnd.jpg");
+
+    /* Full height */
+    height: auto;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallaxBoard {
+    /* The image used */
+    background-image: url("/images/camp-page-parallax-board.jpg");
+
+    /* Full height */
+    height: auto;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* END PARALLAX GROUP*/
+
+.flex-start{
+    justify-content: flex-start;
+}
+
+/* TABLE GROUP */
+.table-col{
+    width: 250px;
+    padding-right: 12px;
+    word-wrap: normal;
+}
+
+div.table-col h3 {
+    color: #e8e0c5;
+}
+
+div.camp-box h2{
+    color: #e8e0c5;
+
+}
+
+.camp-box a.btn {
+    width: 250px;
+}
+
+/* END TABLE GROUP*/
+
 .left-text {
     text-align: left;
+}
+
+#magicCamp{
+   padding: 0 10%;
 }
 
 #video-playback > div.player-overlay.player-fullscreen-overlay.js-control-fullscreen-overlay {
@@ -617,4 +706,20 @@ align-self: baseline;
 
 .sm-margin-fix{
   margin: 5%;
+}
+
+/* camp sign up styles */
+
+section.campStyles * input {
+    height: 2.5em;
+    width: 15em;
+    margin: 0 2em;
+    text-align: left;
+}
+
+
+.camp-box{
+    height: auto;
+    width: 100%
+
 }

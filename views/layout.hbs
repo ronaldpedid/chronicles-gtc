@@ -36,11 +36,6 @@
             <a class="userlink" href="/logout">Logout</a>
         </div>
     {{/if}}
-    <div class="nav-container flex flex-flow-row-wr center">
-        <button onclick="eventBtn()" class="btn">Events</button>
-        <button onclick="aboutBtn()" class="btn">About</button>
-        <button onclick="streamBtn()" class="btn">Stream</button>
-    </div>
 </section>
 
 {{{body}}}
@@ -107,6 +102,9 @@
     }
     function streamBtn() {
         document.location = "#stream"
+    }
+    function editBlogBtn() {
+        document.location = "/posts/create/"
     }
     function editEventBtn(id) {
         document.location = "/events/" + id + "/edit"
