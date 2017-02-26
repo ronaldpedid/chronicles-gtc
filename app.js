@@ -34,7 +34,6 @@ function initializeApp(db) {
     var dashboard = require('./routes/dashboard');
     var privacy = require('./routes/privacy');
     var config = require('./config');
-    var signup = require('./routes/signup');
     var camp = require('./routes/camp');
 
     var app = express();
