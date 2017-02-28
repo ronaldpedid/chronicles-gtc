@@ -35,6 +35,7 @@ function initializeApp(db) {
     var privacy = require('./routes/privacy');
     var config = require('./config');
     var camp = require('./routes/camp');
+    var tos = require('./routes/tos');
 
     var app = express();
     app.db = db;
@@ -141,6 +142,7 @@ function initializeApp(db) {
         app.use('/', index);
         app.use('/login', login);
         app.use('/privacy', privacy);
+        app.use('/tos/', tos);
         app.use('/posts/', posts);
         app.use('/camp/', camp);
         // app.use('/signup/', signup);

@@ -15,5 +15,6 @@ Disallow: /blog/
 Disallow: /games/
 Disallow: /games/create/
 Disallow: /games/edit/
-Disallow: /campsignup/
+Disallow: /camp/
 Disallow: /signup/
+Disallow: /tos/
