@@ -18,3 +18,4 @@ Disallow: /games/edit/
 Disallow: /camp/
 Disallow: /signup/
 Disallow: /tos/
+Disallow: /post/
