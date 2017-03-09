@@ -1,0 +1,22 @@
+<section class="flex flex-flow-no-wr center">
+    <form class=" flex flex-flow-no-wr center-text" action="{{action}}" method="post">
+        <label for="cardName" class="margin-twenty">Card Name</label>
+        <input id="cardName" type="text" name="cardName" placeholder="CARD NAME" value="{{cardName}}"/>
+        <label for="name" class="margin-twenty">Employee Name</label>
+        <input id="ename" type="text" name="name" placeholder="EMPLOYEE NAME" value="{{name}}"/>
+        <label for="name" class="margin-twenty">
+            <p class="flex flex-flow-no-wr">What game is it from?</p>
+            KEY: V for Vanguard, W for Weiss Schwarz,, B for Buddy Fight</label>
+        <input id="game" type="text" name="game" placeholder="Enter V, W, or B" value="{{game}}"/>
+        <label for="date" class="margin-twenty">Today's Date</label>
+        <input type="datetime-local" class="flatpickr" name="date" id="date" value="{{date}}"/>
+        <label for="price" class="margin-twenty">Sold for: $ (enter a number)</label>
+        <input type="text" name="price" id="price" value="{{price}}"/>
+
+        <div class="margin-twenty">
+            <button class="btn" type="submit">Create</button>
+            <button class="btn" type="reset">Reset</button>
+        </div>
+
+    </form>
+</section>

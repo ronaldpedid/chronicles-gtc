@@ -9,7 +9,6 @@ function initializeApp(db) {
     var mongoMiddleware = require('./middleware/mongo');
     var backgroundSelectMiddleware = require('./middleware/background-select');
     var setUserOnLocalsMiddleware = require('./middleware/user-local');
-// var newEventsMiddleware = require('./middleware/events-middleware');
     var session = require('express-session');
     var flash = require('express-flash');
     var moment = require('moment');
@@ -36,6 +35,8 @@ function initializeApp(db) {
     var config = require('./config');
     var camp = require('./routes/camp');
     var tos = require('./routes/tos');
+    var promise = require('promise');
+    var spReport = require('./routes/spreport');
 
     var app = express();
     app.db = db;
@@ -82,101 +83,101 @@ function initializeApp(db) {
         });
     });
 
-        var handleBars = expressHandlebars.create({
-            layoutsDir: path.join(__dirname, 'views'),
-            partialsDir: path.join(__dirname, 'views', 'partials'),
-            defaultLayout: 'layout',
-            extname: '.hbs',
-            helpers: {
-                formatDate: function (dateString) {
-                    return moment(dateString).format("dddd, MMMM D / h A");
-                },
-                setChecked: function (value, currentValue) {
-                    if (value == currentValue) {
-                        return "checked"
-                    } else {
-                        return "";
-                    }
-                },
-                toISOFormat: function (value) {
-                    return moment('value').format('YYYY-MM-DDThh:mm');
+    var handleBars = expressHandlebars.create({
+        layoutsDir: path.join(__dirname, 'views'),
+        partialsDir: path.join(__dirname, 'views', 'partials'),
+        defaultLayout: 'layout',
+        extname: '.hbs',
+        helpers: {
+            formatDate: function (dateString) {
+                return moment(dateString).format("dddd, MMMM D / h A");
+            },
+            setChecked: function (value, currentValue) {
+                if (value == currentValue) {
+                    return "checked"
+                } else {
+                    return "";
                 }
-
+            },
+            toISOFormat: function (value) {
+                return moment('value').format('YYYY-MM-DDThh:mm');
             }
-        });
-        app.engine("hbs", handleBars.engine);
-        app.set('views', path.join(__dirname, 'views'));
-        app.set('view engine', 'hbs');
+
+        }
+    });
+    app.engine("hbs", handleBars.engine);
+    app.set('views', path.join(__dirname, 'views'));
+    app.set('view engine', 'hbs');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
-        app.use(methodOverride("_method"));
-        app.use(logger('dev'));
-        app.use(express.static(path.join(__dirname, 'public')));
-        app.use(bodyParser.json());
-        app.use(bodyParser.urlencoded({extended: true}));
-        app.use(cookieParser());
-        app.use(mongoMiddleware(config.mongo));
-        app.use(backgroundSelectMiddleware());
-        app.use(session({
-            store: new MongoStore({url: config.mongo.connectionString}),
-            secret: secret,
-            maxAge: 60 * 60 * 1000, // ms; lasts for one hour
-            resave: false,
-            saveUninitialized: false
-        }));
-        app.use(passport.initialize());
-        app.use(passport.session());
-        app.use(flash());
-        app.use(setUserOnLocalsMiddleware());
-        var authRouter = express.Router();
-        authRouter.use(function (req, res, next) {
-            if (req.isAuthenticated()) {
-                return next()
-            }
-            res.redirect('/login');
-        });
+    app.use(methodOverride("_method"));
+    app.use(logger('dev'));
+    app.use(express.static(path.join(__dirname, 'public')));
+    app.use(bodyParser.json());
+    app.use(bodyParser.urlencoded({extended: true}));
+    app.use(cookieParser());
+    app.use(mongoMiddleware(config.mongo));
+    app.use(backgroundSelectMiddleware());
+    app.use(session({
+        store: new MongoStore({url: config.mongo.connectionString}),
+        secret: secret,
+        maxAge: 60 * 60 * 1000, // ms; lasts for one hour
+        resave: false,
+        saveUninitialized: false
+    }));
+    app.use(passport.initialize());
+    app.use(passport.session());
+    app.use(flash());
+    app.use(setUserOnLocalsMiddleware());
+    var authRouter = express.Router();
+    authRouter.use(function (req, res, next) {
+        if (req.isAuthenticated()) {
+            return next()
+        }
+        res.redirect('/login');
+    });
 
 
-        app.use('/', index);
-        app.use('/login', login);
-        app.use('/privacy', privacy);
-        app.use('/tos/', tos);
-        app.use('/posts/', posts);
-        app.use('/camp/', camp);
-        // app.use('/signup/', signup);
-        authRouter.use('/register', register);
-        authRouter.use('/users', users);
-        authRouter.use('/events', events);
-        authRouter.use('/events/create', events);
-        authRouter.use('/about', about);
-        authRouter.use('/dashboard', dashboard);
-        authRouter.use('/games/', games);
-        authRouter.use('/comments/', comments);
-        authRouter.use('/caro/', caro);
-        authRouter.use('/logout', logout);
-        authRouter.use('/posts/create/', posts);
-        app.use(authRouter);
+    app.use('/', index);
+    app.use('/login', login);
+    app.use('/privacy', privacy);
+    app.use('/tos/', tos);
+    app.use('/posts/', posts);
+    app.use('/camp/', camp);
+    authRouter.use('/spreport/', spReport);
+    authRouter.use('/register', register);
+    authRouter.use('/users', users);
+    authRouter.use('/events', events);
+    authRouter.use('/events/create', events);
+    authRouter.use('/about', about);
+    authRouter.use('/dashboard', dashboard);
+    authRouter.use('/games/', games);
+    authRouter.use('/comments/', comments);
+    authRouter.use('/caro/', caro);
+    authRouter.use('/logout', logout);
+    authRouter.use('/posts/create/', posts);
+    app.use(authRouter);
 
 
 // catch 404 and forward to error handler
-        app.use(function (req, res, next) {
-            var err = new Error('Not Found');
-            err.status = 404;
-            next(err);
-        });
+    app.use(function (req, res, next) {
+        var err = new Error('Not Found');
+        err.status = 404;
+        next(err);
+    });
 
 // error handler
-        app.use(function (err, req, res, next) {
-            // set locals, only providing error in development
-            res.locals.message = err.message;
-            res.locals.error = req.app.get('env') === 'development' ? err : {};
+    app.use(function (err, req, res, next) {
+        // set locals, only providing error in development
+        res.locals.message = err.message;
+        res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-            // render the error page
-            res.status(err.status || 500);
-            res.render('error');
-        });
-        return app;
-    }
-    module.exports = initializeApp;
+        // render the error page
+        res.status(err.status || 500);
+        res.render('error');
+    });
+    return app;
+}
+module.exports = initializeApp;

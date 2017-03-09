@@ -19,3 +19,5 @@ Disallow: /camp/
 Disallow: /signup/
 Disallow: /tos/
 Disallow: /post/
+Disallow: /spreport/create/
+Disallow: /spreport/

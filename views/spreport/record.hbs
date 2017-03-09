@@ -1,0 +1,21 @@
+<div class="flex center flex-flow-no-wr margin-twenty">
+
+
+    <form action="{{ deleteAction }}" method="post">
+        <div class="flex center margin-twenty">
+            <button type="submit" class="btn">Delete</button>
+        </div>
+    </form>
+
+    {{#with report}}
+        <a href="{{id}}">
+            <h4>{{ cardName }}</h4>
+            <h4>{{ game }}</h4>
+            <h4>{{ name }}</h4>
+            <h4>{{ date }}</h4>
+            <h5>$:{{price}}</h5>
+        </a>
+    {{/with}}
+
+</div>
+
