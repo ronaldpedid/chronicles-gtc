@@ -7,7 +7,6 @@
 @media screen and (min-width: 768px) and (max-width: 1920px) {
     .hero-section {
         justify-content: center;
-        margin: 20px auto;
         width: 50%;
     }
 
