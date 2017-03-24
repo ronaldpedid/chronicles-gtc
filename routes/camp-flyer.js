@@ -4,7 +4,7 @@ var router = express.Router();
 
 
 router.get('/', function (req, res) {
-    res.render('camp-flyer');
+    res.render('flyer');
 });
 
 module.exports = router;
