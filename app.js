@@ -37,10 +37,10 @@ function initializeApp(db) {
     var tos = require('./routes/tos');
     var promise = require('promise');
     var spReport = require('./routes/spreport');
-    var formidable = require('formidable');
-    var fs = require('fs-extra');
-    var  util = require('util');
-    var upload = require('./routes/upload');
+    // var formidable = require('formidable');
+    // var fs = require('fs-extra');
+    // var  util = require('util');
+    // var upload = require('./routes/upload');
 
 
 
