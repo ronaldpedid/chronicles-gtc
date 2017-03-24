@@ -41,7 +41,6 @@ function initializeApp(db) {
     var fs = require('fs-extra');
     var  util = require('util');
     var upload = require('./routes/upload');
-    var campFlyer = require('./routes/camp-flyer');
 
 
 
@@ -191,7 +190,6 @@ function initializeApp(db) {
     app.use('/tos/', tos);
     app.use('/posts/', posts);
     app.use('/camp/', camp);
-    app.use('/camp-flyer/', campFlyer);
     authRouter.use('/spreport/', spReport);
     authRouter.use('/register', register);
     authRouter.use('/users', users);
