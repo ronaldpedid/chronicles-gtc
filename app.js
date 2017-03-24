@@ -37,6 +37,13 @@ function initializeApp(db) {
     var tos = require('./routes/tos');
     var promise = require('promise');
     var spReport = require('./routes/spreport');
+    var formidable = require('formidable');
+    var fs = require('fs-extra');
+    var  util = require('util');
+    var upload = require('./routes/upload');
+    var campFlyer = require('./routes/camp-flyer');
+
+
 
     var app = express();
     app.db = db;
@@ -109,9 +116,7 @@ function initializeApp(db) {
     app.set('views', path.join(__dirname, 'views'));
     app.set('view engine', 'hbs');
 
-// uncomment after placing your favicon in /public
-
-    // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+    //starting the app.use section
     app.use(methodOverride("_method"));
     app.use(logger('dev'));
     app.use(express.static(path.join(__dirname, 'public')));
@@ -139,6 +144,46 @@ function initializeApp(db) {
         res.redirect('/login');
     });
 
+    //upload system code
+    app.use(express.static(path.join(__dirname, 'uploads/')));
+
+    authRouter.get('/upload', function(req, res){
+        res.sendFile(path.join(__dirname, 'views/upload/upload.html'));
+    });
+
+    app.post('/upload', function(req, res){
+
+        // create an incoming form object
+        var form = new formidable.IncomingForm();
+
+        // specify that we want to allow the user to upload multiple files in a single request
+        form.multiples = true;
+
+        // store all upload in the /upload directory
+        form.uploadDir = path.join(__dirname, '/uploads/');
+
+        // every time a file has been uploaded successfully,
+        // rename it to it's orignal name
+        form.on('file', function(field, file) {
+            fs.rename(file.path, path.join(form.uploadDir, file.name));
+        });
+
+        // log any errors that occur
+        form.on('error', function(err) {
+            console.log('An error has occured: \n' + err);
+        });
+
+        // once all the files have been uploaded, send a response to the client
+        form.on('end', function() {
+            res.end('success');
+        });
+
+        // parse the incoming request containing the form data
+        form.parse(req);
+
+    });
+
+
 
     app.use('/', index);
     app.use('/login', login);
@@ -146,6 +191,7 @@ function initializeApp(db) {
     app.use('/tos/', tos);
     app.use('/posts/', posts);
     app.use('/camp/', camp);
+    app.use('/camp-flyer/', campFlyer);
     authRouter.use('/spreport/', spReport);
     authRouter.use('/register', register);
     authRouter.use('/users', users);
