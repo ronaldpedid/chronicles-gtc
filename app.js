@@ -37,11 +37,10 @@ function initializeApp(db) {
     var tos = require('./routes/tos');
     var promise = require('promise');
     var spReport = require('./routes/spreport');
-    // var formidable = require('formidable');
-    // var fs = require('fs-extra');
-    // var  util = require('util');
-    // var upload = require('./routes/upload');
-
+    // testing below, comment out or delete before push //
+    var formidable = require('formidable');
+    var fs = require('fs-extra');
+    var  util = require('util');
 
 
     var app = express();
@@ -108,9 +107,10 @@ function initializeApp(db) {
             toISOFormat: function (value) {
                 return moment('value').format('YYYY-MM-DDThh:mm');
             }
-
         }
     });
+
+
     app.engine("hbs", handleBars.engine);
     app.set('views', path.join(__dirname, 'views'));
     app.set('view engine', 'hbs');
@@ -224,4 +224,5 @@ function initializeApp(db) {
     });
     return app;
 }
+
 module.exports = initializeApp;
