@@ -264,7 +264,7 @@ label {
 textarea {
     height: 250px;
     width: 250px;
-
+    resize: none;
 }
 
 #twitchPlayer {
@@ -737,3 +737,23 @@ color: #e8e0c5;
 .g-artboard {
     margin:0 auto;
 }
+
+.bp-format{
+    word-wrap: normal;
+    margin: 2em 20em;
+}
+
+.pre {
+    white-space: pre-wrap;
+    flex-wrap: wrap;
+
+}
+
+/* blog title and author styles */
+.blg-ttl-sty {
+    font-size: 600%;
+}
+.ath-sty{
+    color: #f8ca66;
+}
+
