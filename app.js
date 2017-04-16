@@ -39,7 +39,7 @@ function initializeApp(db) {
     var spReport = require('./routes/spreport');
     // testing below, comment out or delete before push //
     var formidable = require('formidable');
-    var fs = require('fs-extra');
+    // var fs = require('fs-extra');
     var  util = require('util');
     
     var app = express();
