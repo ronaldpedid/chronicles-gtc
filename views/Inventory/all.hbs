@@ -22,10 +22,10 @@
                 <li class="item">Condition</li>
                 <li class="item">Updated By</li>
                 <li class="item">Last Updated</li>
-            </ul><!-- recommit -->
+            </ul>
             {{#each group.items as |item|}}
                 {{#with item}}
-                    <div>
+                    <div><!-- recommit me -->
                         <div class="arrow-up">
                             <form action="/inventory/{{id}}?_method=DELETE" method="post">
                                 <button type="submit">DELETE</button>
