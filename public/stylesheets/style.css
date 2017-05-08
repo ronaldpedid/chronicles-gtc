@@ -874,7 +874,7 @@ form button.btn-inv:hover {
     color: #382237;
 }
 
-input.card-name {
+li.first-itm input.cn {
     font-size: 12px;
     color: #FFFFFF;
     width: 30em;
