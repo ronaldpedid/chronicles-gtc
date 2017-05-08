@@ -8,7 +8,7 @@
         </div>
     <div id="groupItemContainer">
 {{/if}}
-        {{#each groupedItems as |group|}}
+{{#each groupedItems as |group|}}
         <div class="flex flex-flow-no-wr margin-twenty card">
             <a class="center bot-margin-twenty color-standout">{{group.clanName}}</a>
             <ul class="flex list-items inv-row-top  margin-twenty">
@@ -25,7 +25,7 @@
             </ul>
             {{#each group.items as |item|}}
                 {{#with item}}
-                    <div><!-- recommit me again -->
+                    <div>
                         <div class="arrow-up">
                             <form action="/inventory/{{id}}?_method=DELETE" method="post">
                                 <button type="submit">DELETE</button>
@@ -49,9 +49,21 @@
                                                 type="number"
                                                 value="{{price}}"/>
                                     </li>
-                                    <li class="item">{{printSet}}</li>
-                                    <li class="item">{{rarity}}</li>
-                                    <li class="item">{{grade}}</li>
+                                    <li class="item">
+                                        <input class="center" name="printSet"
+                                               type="text" value="{{printSet}}"/>
+                                        </li>
+
+
+                                    <li class="item">
+                                        <input class="center" name="rarity"
+                                               type="text" value="{{rarity}}"/>
+                                    </li>
+
+                                    <li class="item">
+                                        <input class="center" name="grade"
+                                               type="number" min="0" max="4" value="{{grade}}"/>
+                                    </li>
                                     <li class="item">{{condition}}</li>
                                     <li class="item">{{lastUpdatedBy.username}}</li>
                                     <li class="list-last">{{formatUpdate updatedAt}}</li>
@@ -64,7 +76,7 @@
                 {{/with}}
             {{/each}}
         </div>
-        {{/each}}
+{{/each}}
 {{#if showSection}}
     </div>
     </section>
