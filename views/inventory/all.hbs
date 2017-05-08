@@ -1,0 +1,72 @@
+{{#if showSection}}
+    <section id="filter" class="flex flex-flow-no-wr inventory-div inv-table tt-align-left center ">
+        <h1 class="center margin-twenty">Filter By</h1>
+        <input type="text" id="inSearch" placeholder="Filter by card name...">
+        <!--<h1 class="center margin-twenty">Sort By</h1>-->
+        <div class="inv-key center margin-twenty bot-margin-twenty">
+            <a href="/inventory/add/">Add New</a>
+        </div>
+    <div id="groupItemContainer">
+{{/if}}
+        {{#each groupedItems as |group|}}
+        <div class="flex flex-flow-no-wr margin-twenty card">
+            <a class="center bot-margin-twenty color-standout">{{group.clanName}}</a>
+            <ul class="flex list-items inv-row-top  margin-twenty">
+                <li class="first-itm">Card Name</li>
+                <li class="item ">Quantity</li>
+                <li class="item">Update</li>
+                <li class="item">Price</li>
+                <li class="item">Print Set</li>
+                <li class="item">Rarity</li>
+                <li class="item">Grade</li>
+                <li class="item">Condition</li>
+                <li class="item">Updated By</li>
+                <li class="item">Last Updated</li>
+            </ul>
+            {{#each group.items as |item|}}
+                {{#with item}}
+                    <div><!-- recommit me again -->
+                        <div class="arrow-up">
+                            <form action="/inventory/{{id}}?_method=DELETE" method="post">
+                                <button type="submit">DELETE</button>
+                            </form>
+                        </div>
+                        <form action="/inventory/{{id}}?_method=PUT" method="post">
+                            <div>
+                                <ul id="inventory/{{id}}"
+                                    class="inv-row-bot right-text flex bot-list-itm UL border-bot-list">
+                                    <li class="first-itm"><a href="/inventory/{{id}}">{{cardName}}</a></li>
+                                    <li class="item">
+                                        <input class="quan center-text" name="quantity" min="0" type="number"
+                                               value="{{quantity}}"/>
+                                    </li>
+                                    <li class="item">
+                                        <button class="btn-inv" type="submit">Update</button>
+                                    </li>
+
+                                    <li class="item">
+                                        $<input class="center" name="price" pattern="\d+(\.\d+)?" step="0.01" min="0"
+                                                type="number"
+                                                value="{{price}}"/>
+                                    </li>
+                                    <li class="item">{{printSet}}</li>
+                                    <li class="item">{{rarity}}</li>
+                                    <li class="item">{{grade}}</li>
+                                    <li class="item">{{condition}}</li>
+                                    <li class="item">{{lastUpdatedBy.username}}</li>
+                                    <li class="list-last">{{formatUpdate updatedAt}}</li>
+
+                                </ul>
+                            </div>
+                        </form>
+                    </div>
+
+                {{/with}}
+            {{/each}}
+        </div>
+        {{/each}}
+{{#if showSection}}
+    </div>
+    </section>
+    <script src="/javascripts/item.js"></script>
+{{/if}}
