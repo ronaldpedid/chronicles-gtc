@@ -2,8 +2,17 @@
     span img {
         margin-right: 10px;
     }
+    li.first-itm input.cn{
+        width: 30em;
+    }
 }
-@media screen and (min-width: 1440px) and (max-width: 1920px){
+@media screen and (min-width: 1651px) and (max-width: 1920px){
+    li.first-itm input.cn{
+        width: 25em;
+    }
+}
+
+@media screen and (min-width: 1440px) and (max-width: 1650px){
     li.first-itm input.cn{
         width: 20em;
     }
