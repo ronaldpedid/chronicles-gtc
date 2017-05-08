@@ -35,7 +35,10 @@
                             <div>
                                 <ul id="inventory/{{id}}"
                                     class="inv-row-bot right-text flex bot-list-itm UL border-bot-list">
-                                    <li class="first-itm"><a href="/inventory/{{id}}">{{cardName}}</a></li>
+                                    <li class="first-itm">
+                                        <input class="center cn" name="cardName"
+                                               type="text" value="{{cardName}}"/>
+                                    </li>
                                     <li class="item">
                                         <input class="quan center-text" name="quantity" min="0" type="number"
                                                value="{{quantity}}"/>
