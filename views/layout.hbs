@@ -3,15 +3,17 @@
 <head>
     <meta name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1,minimum-scale=1, user-scalable = no"/>
+    <meta property="fb:admins" content="{AmazingNibiru}"/>
     <title>{{title}}</title>
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
     <link rel='stylesheet' href='/stylesheets/style.css'/>
     <link rel='stylesheet' href='/stylesheets/mobile.css'/>
     <link rel="stylesheet" href="https://unpkg.com/flatpickr/dist/flatpickr.min.css">
-    <script src="https://unpkg.com/flatpickr"></script>
-    <script src='https://www.google.com/recaptcha/api.js'></script>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <script src="https://unpkg.com/flatpickr"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
 </head>
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
@@ -20,13 +22,27 @@
         enable_page_level_ads: true
     });
 </script>
+<div id="fb-root"></div>
+<script>(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <body class="cgtc-store">
 {{#if messages.success}}
     <div>{{ messages.success }}</div>
 {{/if}}
-
 {{#if deleteaction.success}}
     <div>{{ deleteaction.success }}</div>
+{{/if}}
+{{#if post.success}}
+    <div>{{ post.success }}</div>
+{{/if}}
+{{#if messages.error}}
+    <div>{{messages.error}}</div>
 {{/if}}
 <section class="layout-wrapper flex-flow-no-wr center">
     <div class="background-div flex flex flex-flow-row-wr center" style="background-image: url('{{backgroundPath}}')">
@@ -41,12 +57,13 @@
     {{#if user}}
         <div class="userinfo">
             <span class="username">Welcome, {{user.username}}</span>
-            <a class="userlink" href="/dashboard">Dashboard</a>
+            <a class="userlink" href="/dashboard">Dashboard</a> |
+            <a class="userlink" href="/inventory">Inventory</a> |
             <a class="userlink" href="/logout">Logout</a>
         </div>
     {{/if}}
 </section>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 {{{body}}}
 <footer class="margin-twenty">
 
@@ -67,6 +84,7 @@
 <!--<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>-->
 <!--<script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>-->
 <script src="/javascripts/carousel.js"></script>
+<!-- button events -->
 <script>
     var slideManager = new SlideManager();
     slideManager.start();
@@ -106,10 +124,10 @@
         document.location = "/comments/"
 
     }
-    function editSpSales(){
+    function editSpSales() {
         document.location = "/spreport/create/"
     }
-    function viewSpSales(){
+    function viewSpSales() {
         document.location = "/spreport/"
     }
     function editCaroBtn() {
@@ -128,9 +146,11 @@
     function campBtn() {
         document.location = "/camp/"
     }
-
 </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script>
+</script>
+
 <script>var $ = jQuery.noConflict();</script>
 <script>
     flatpickr(".flatpickr", {
@@ -154,11 +174,14 @@
     ga('send', 'pageview');
 
 </script>
+
+
 <!-- jQuery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><script>var $=jQuery.noConflict();</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>var $ = jQuery.noConflict();</script>
 
 <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
 </body>
 </html>

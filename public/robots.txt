@@ -21,3 +21,5 @@ Disallow: /tos/
 Disallow: /post/
 Disallow: /spreport/create/
 Disallow: /spreport/
+Disallow: /inventory/
+Disallow: /inventory/add/

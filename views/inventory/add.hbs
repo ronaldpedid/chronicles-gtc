@@ -1,0 +1,77 @@
+<section class="flex-flow-row-wr center add-inv" xmlns="http://www.w3.org/1999/html">
+    <form class="center" action="{{action}}" method="post">
+        {{#with item}}
+            <label for="text">Card name:</label>
+            <input type="text" name="cardName" value="{{cardName}}"/>
+
+            <label for="number">How Many</label>
+            <input type="number" name="quantity" value="{{quantity}}"/>
+            <label for="clanName">Select Clan</label>
+            <select name="clanName" value="{{clanName}}">
+                <option>Angel Feather</option>
+                <option>Aqua Force</option>
+                <option>Bermuda Triangle</option>
+                <option>Dark Irregulars</option>
+                <option>Dimensional Police</option>
+                <option>Gear Chronicle</option>
+                <option>Genesis</option>
+                <option>Gold Paladin</option>
+                <option>Granblue</option>
+                <option>Great Nature</option>
+                <option>Kagero</option>
+                <option>Link Joker</option>
+                <option>Megacolony</option>
+                <option>Murakumo</option>
+                <option>Narukami</option>
+                <option>Neo Nectar</option>
+                <option>Nova Grappler</option>
+                <option>Nubatama</option>
+                <option>Oracle Think Tank</option>
+                <option>Pale Moon</option>
+                <option>Royal Paladin</option>
+                <option>Shadow Paladin</option>
+                <option>Spike Brothers</option>
+                <option>Tachizake</option>
+                <option>Touken Randu</option>
+                <option>Cray Elemental</option>
+            </select>
+            <label for="printSet">Set Number:</label>
+            <input type="text" name="printSet" value="{{printSet}}"/>
+            <label for="price">Price:</label>
+            <input type="text" name="price" value="{{price}}"/>
+            <label for="rarity">Select Rarity</label>
+            <select name="rarity" value="{{rarity}}">
+                <option>C</option>
+                <option>R</option>
+                <option>RR</option>
+                <option>RRR</option>
+                <option>GR</option>
+                <option>SP</option>
+                <option>TD</option>
+                <option>PR</option>
+            </select>
+            <label for="grade">Grade</label>
+            <select name="grade" value="{{grade}}">
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+            </select>
+            <label for="condition">Condition</label>
+            <select name="condition" value="{{condition}}">
+                <option>Near Mint</option>
+                <option>Lightly Played</option>
+                <option>Moderately Played</option>
+                <option>Damaged</option>
+            </select>
+        {{/with}}
+        <button type="submit" class="btn-inv-add margin-twenty">[ Add Entry ]</button>
+    </form>
+
+    <form class="flex" action="{{deleteAction}}" method="post">
+        <button type="submit" class="btn-inv-add margin-twenty center">[ Delete this entry ]</button>
+    </form>
+
+</section>
+

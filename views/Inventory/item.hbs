@@ -1,0 +1,26 @@
+<section class="flex flex-flow-no-wr center inventory-table">
+<table class="inventory center single-item">
+    <tr class="inv-row-top">
+        <td>Card Name</td>
+        <td>Quantity</td>
+        <td>Clan Name</td>
+        <td>Print Set</td>
+        <td>Price</td>
+        <td>Rarity</td>
+        <td>Grade</td>
+        <td>Condition</td>
+    </tr>
+    {{#with item}}
+    <tr class="inv-row-bot">
+        <td><a href="{{id}}/edit">{{cardName}}</a></td>
+        <td>{{quantity}}</td>
+        <td>{{clanName}}</td>
+        <td>{{printSet}}</td>
+        <td>{{price}}</td>
+        <td>{{rarity}}</td>
+        <td>{{grade}}</td>
+        <td>{{condition}}</td>
+    </tr>
+    {{/with}}
+</table>
+</section>

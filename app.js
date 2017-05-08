@@ -28,6 +28,8 @@ function initializeApp(db) {
     var about = require('./routes/about');
     var posts = require('./routes/posts');
     var caro = require('./routes/caro');
+    var inventory = require('./routes/item');
+    var clans = require('./routes/clans');
     var comments = require('./routes/comments');
     var secret = "Nibbieamylodgiduke1";
     var dashboard = require('./routes/dashboard');
@@ -40,8 +42,9 @@ function initializeApp(db) {
     // testing below, comment out or delete before push //
     // var formidable = require('formidable');
     // var fs = require('fs-extra');
-    // var  util = require('util');
-    
+    // var util = require('util');
+
+
     var app = express();
     app.db = db;
 
@@ -72,10 +75,12 @@ function initializeApp(db) {
             });
         }
     ));
+
     passport.serializeUser(function (user, done) {
         console.log('serialize', user.id);
         return done(null, user.id)
     });
+
     passport.deserializeUser(function (id, done) {
         console.log('deserialize', id);
         User.findById(id, function (err, user) {
@@ -105,10 +110,12 @@ function initializeApp(db) {
             },
             toISOFormat: function (value) {
                 return moment('value').format('YYYY-MM-DDThh:mm');
+            },
+            formatUpdate: function (dateString) {
+                    return moment(dateString).format("MMMM - D @ h : mm : ss A");
             }
         }
     });
-
 
     app.engine("hbs", handleBars.engine);
     app.set('views', path.join(__dirname, 'views'));
@@ -145,11 +152,11 @@ function initializeApp(db) {
     //upload system code
     app.use(express.static(path.join(__dirname, 'uploads/')));
 
-    authRouter.get('/upload', function(req, res){
+    authRouter.get('/upload', function (req, res) {
         res.sendFile(path.join(__dirname, 'views/upload/upload.html'));
     });
 
-    app.post('/upload', function(req, res){
+    app.post('/upload', function (req, res) {
 
         // create an incoming form object
         var form = new formidable.IncomingForm();
@@ -162,17 +169,17 @@ function initializeApp(db) {
 
         // every time a file has been uploaded successfully,
         // rename it to it's orignal name
-        form.on('file', function(field, file) {
+        form.on('file', function (field, file) {
             fs.rename(file.path, path.join(form.uploadDir, file.name));
         });
 
         // log any errors that occur
-        form.on('error', function(err) {
+        form.on('error', function (err) {
             console.log('An error has occured: \n' + err);
         });
 
         // once all the files have been uploaded, send a response to the client
-        form.on('end', function() {
+        form.on('end', function () {
             res.end('success');
         });
 
@@ -180,7 +187,6 @@ function initializeApp(db) {
         form.parse(req);
 
     });
-
 
 
     app.use('/', index);
@@ -201,6 +207,10 @@ function initializeApp(db) {
     authRouter.use('/caro/', caro);
     authRouter.use('/logout', logout);
     authRouter.use('/posts/create/', posts);
+    authRouter.use('/inventory', inventory);
+    authRouter.use('/inventory/add/', inventory);
+    authRouter.use('/clans', clans);
+    authRouter.use('/clans/create/', clans);
     app.use(authRouter);
 
 

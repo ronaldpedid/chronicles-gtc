@@ -1,0 +1,18 @@
+<section>
+    <form action="{{action}}" method="post">
+        {{#with clan}}
+            <label for="clanName">Clan Name</label>
+            <input type="text" name="clanName" value="{{clanName}}">
+            <label for="clanName">Clan Logo</label>
+            <input type="text" name="clanName" value="{{clanLogo}}">
+        {{/with}}
+        <button type="submit" class="btn">submit</button>
+        <button type="reset" class="btn">reset</button>
+    </form>
+
+    <form action="{{ deleteAction }}" method="post">
+        <div class="flex center margin-twenty">
+            <button type="submit" class="btn">Delete this game</button>
+        </div>
+    </form>
+</section>
