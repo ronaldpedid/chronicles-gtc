@@ -76,6 +76,9 @@ button {
 
 }
 
+input{
+    font-family: 'Fira Sans', sans-serif;
+}
 .background-div {
     height: 242px;
     background-size: cover;
