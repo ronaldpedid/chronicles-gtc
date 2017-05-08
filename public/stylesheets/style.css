@@ -888,19 +888,22 @@ li.first-itm input.cn {
 
 .arrow-up button {
     cursor: pointer;
-    background-color: #382237;
+    background-color: #84487f;
     border: none;
     font-size: 12px;
     color: #f8ca66;
     padding: 0 1em;
+    font-family: 'Fira Sans', sans-serif;
 }
 
+.arrow-up button:hover{
+    background-color: #f4eed7;
+    color: #382237;
+}
 .arrow-up {
     position: absolute;
     z-index: 2;
     left: 12em;
-    border: 1px solid black;
-
 }
 
 .container {
