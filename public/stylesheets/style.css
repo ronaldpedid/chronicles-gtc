@@ -885,10 +885,10 @@ li.first-itm input.cn {
 
 .arrow-up button {
     cursor: pointer;
-    background-color: transparent;
+    background-color: #382237;
     border: none;
     font-size: 12px;
-    color: red;
+    color: #f8ca66;
     padding: 0 1em;
 }
 
@@ -903,12 +903,6 @@ li.first-itm input.cn {
 .container {
     max-width: 1400px;
     display: flex;
-}
-
-.arrow-up button:hover:after {
-    position: relative;
-    left: 1em;
-    content: 'This will deleted this event';
 }
 
 .arrow-down {
