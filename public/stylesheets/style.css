@@ -895,7 +895,7 @@ li.first-itm input.cn {
 .arrow-up {
     position: absolute;
     z-index: 2;
-    left: 5em;
+    left: 12em;
     border: 1px solid black;
 
 }
