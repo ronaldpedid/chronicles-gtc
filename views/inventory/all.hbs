@@ -27,8 +27,8 @@
                 {{#with item}}
                     <div>
                         <div class="arrow-up">
-                            <form action="/inventory/{{id}}?_method=DELETE" method="post">
-                                <button type="submit">DELETE</button>
+                            <form action="/inventory/{{id}}/edit" method="get">
+                                <button type="submit">View</button>
                             </form>
                         </div>
                         <form action="/inventory/{{id}}?_method=PUT" method="post">
