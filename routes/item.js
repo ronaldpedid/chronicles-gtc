@@ -19,7 +19,8 @@ function getFilterFromQueryString(query) {
 }
 
 function getSortFromQueryString(query) {
-    return [['clanName', 1]];
+    var sort = query.sort;
+    return [[sort, 1]];
 }
 
 router.get('/', function (req, res) {
@@ -31,7 +32,7 @@ router.get('/', function (req, res) {
         }
         var groupedItems = lodash.chain(items).groupBy("clanName").map(function (itemGroup, clanName) {
             return {clanName: clanName, items: itemGroup};
-        }).value();
+        }).sortBy("clanName").value();
         res.render('inventory/all', {
             items: items,
             groupedItems: groupedItems,
