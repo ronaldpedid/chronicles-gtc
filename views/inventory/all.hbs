@@ -7,7 +7,7 @@
             <a href="/inventory/add/">Add New</a>
         </div>
         <div class="center">
-            <button class="btn  sort-btn" data-sort="cardName">Card Name</button>
+            <button class="btn sort-btn" data-sort="cardName">Card Name</button>
             <button class="btn sort-btn" data-sort="quantity">Quantity</button>
             <button class="btn sort-btn" data-sort="price">Price</button>
             <button class="btn sort-btn" data-sort="printSet">Print Set</button>
@@ -34,17 +34,19 @@
                 <li class="item">Updated By</li>
                 <li class="item">Last Updated</li>
             </ul>
-            {{#each group.items as |item|}}
-                {{#with item}}
-                    <div>
-                        <div class="arrow-up">
-                            <form action="/inventory/{{id}}/edit" method="get">
-                                <button type="submit">Edit</button>
-                            </form>
-                        </div>
-                        <form action="/inventory/{{id}}?_method=PUT" method="post">
+
+                {{#each group.items as |item|}}
+                <form action="/inventory/{{id}}?_method=PUT" method="post">
+                    {{#with item}}
+                        <div>
+                            <div class="arrow-up">
+                                <form action="/inventory/{{id}}/edit" method="get">
+                                    <button type="submit">Edit</button>
+                                </form>
+                            </div>
+
                             <div>
-                                <ul id="inventory/{{id}}"
+                                <ul id="{{id}}"
                                     class="inv-row-bot right-text flex bot-list-itm UL border-bot-list">
                                     <li class="first-itm">
                                         <input class="center cn" name="cardName"
@@ -66,7 +68,7 @@
                                     <li class="item">
                                         <input class="center" name="printSet"
                                                type="text" value="{{printSet}}"/>
-                                        </li>
+                                    </li>
 
 
                                     <li class="item">
@@ -80,22 +82,25 @@
                                     </li>
                                     <li class="item">
                                         <input class="center" name="condition"
-                                                             type="text" value="{{condition}}"/>
+                                               type="text" value="{{condition}}"/>
                                     </li>
                                     <li class="item">{{lastUpdatedBy.username}}</li>
                                     <li class="list-last">{{formatUpdate updatedAt}}</li>
 
                                 </ul>
                             </div>
-                        </form>
-                    </div>
 
-                {{/with}}
-            {{/each}}
+                        </div>
+
+                    {{/with}}
+
+                {{/each}}
+            </form>
         </div>
 {{/each}}
 {{#if showSection}}
     </div>
     </section>
     <script src="/javascripts/item.js"></script>
+
 {{/if}}
