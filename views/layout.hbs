@@ -22,15 +22,6 @@
         enable_page_level_ads: true
     });
 </script>
-<div id="fb-root"></div>
-<script>(function (d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s);
-    js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
-    fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 <body class="cgtc-store">
 {{#if messages.success}}
     <div>{{ messages.success }}</div>
@@ -84,6 +75,7 @@
 <!--<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>-->
 <!--<script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>-->
 <script src="/javascripts/carousel.js"></script>
+<script src="/javascripts/item-scroll.js"></script>
 <!-- button events -->
 <script>
     var slideManager = new SlideManager();
